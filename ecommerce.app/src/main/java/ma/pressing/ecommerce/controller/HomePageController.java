@@ -65,6 +65,13 @@ public class HomePageController {
 	}
 	
 	
+	@RequestMapping(value="/Inscription", method = RequestMethod.GET)
+	public String inscription(){
+		
+		
+		return "pages/inscription";
+	}
+	
 	@RequestMapping(value = "/Se_Connecter", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {

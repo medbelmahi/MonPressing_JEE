@@ -75,7 +75,7 @@
 													</div>
 													<div class="row">
 														<div class="col-md-6">
-														<p class="sign-up-info">Non Inscrit ? <a href="inscription.html" class="p-none m-none ml-xs">Inscription</a></p>
+														<p class="sign-up-info">Non Inscrit ? <a href="<c:url value="/Inscription" />" class="p-none m-none ml-xs">Inscription</a></p>
 														</div>
 													</div>
 													<input type="hidden" name="${_csrf.parameterName}"

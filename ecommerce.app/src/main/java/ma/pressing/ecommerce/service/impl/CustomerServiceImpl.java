@@ -19,6 +19,7 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public CustomerModel save(CustomerModel customerModel) {
+		customerModel.setEnabled(true);
 		return userDao.save(customerModel);
 	}
 

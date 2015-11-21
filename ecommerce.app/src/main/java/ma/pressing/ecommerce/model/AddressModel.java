@@ -17,7 +17,7 @@ public class AddressModel extends AbstractModel{
 	@Column(name="STREET")
 	private String street;
 	
-	//Quartier/région
+	//Quartier/region
 	@Column(name="DSTRICT")
 	private String district;
 	

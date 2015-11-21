@@ -1,11 +1,13 @@
 package ma.pressing.ecommerce.controller.customer;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -13,84 +15,102 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import ma.pressing.ecommerce.facade.DefaultCustomerFacade;
+import ma.pressing.ecommerce.facade.data.CustomerData;
 import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
 import ma.pressing.ecommerce.model.enumeration.CivilityType;
-import ma.pressing.ecommerce.web.form.UserLoginForm;
 import ma.pressing.ecommerce.web.form.data.CustomerForm;
 
 @Controller
 public class CustomerSignInUpController {
 
+	public static String PAGE_INSCRIPTION = "pages/inscription";
+	public static String PAGE_CONNEXION = "pages/customer_connexion";
 	
-	@RequestMapping(value="/in", method = RequestMethod.GET)
-	public String displayCustomerSignInForm(ModelMap model){
-		
-		model.addAttribute("customer", new UserLoginForm());
-		
-		return "customer_sign_in_form";
-	}
+	@Autowired
+	DefaultCustomerFacade cutomerFacade;
 	
-	// show add user form
-	@RequestMapping(value = "/customer/add", method = RequestMethod.GET)
-	public String showAddUserForm(ModelMap model) {
-
-		//logger.debug("showAddUserForm()");
-
+	
+	
+	@RequestMapping(value="/Inscription", method = RequestMethod.GET)
+	public String inscription(ModelMap model){
 		CustomerForm userForm = new CustomerForm();
 		
 		model.addAttribute("userForm", userForm);
 
-		populateDefaultModel(model);
+		populateDefaultUserFormAttribute(model);
 
-		return "customer_form";
-
+		return PAGE_INSCRIPTION;
 	}
 	
-	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
+	@RequestMapping(value="/NouvelleInscription", method = RequestMethod.POST)
 	public String addUserForm(@ModelAttribute("userForm") @Validated CustomerForm userForm, BindingResult result, ModelMap model) {
-
-		//logger.debug("showAddUserForm()");
-
+		
 		if(result.hasErrors()){
-			populateDefaultModel(model);
+			populateDefaultUserFormAttribute(model);
 			model.addAttribute("userForm", userForm);
-			return "customer_form";
+			return PAGE_INSCRIPTION;
 		}
 		
+		CustomerData customerData = cutomerFacade.addNewCustomer(userForm);
 		
-		return "redirect:";
+		model.addAttribute("customer", customerData);
 		
+		return PAGE_CONNEXION;
 	}
 	
-	private void populateDefaultModel(ModelMap model) {
-
+	
+	
+	private void populateDefaultUserFormAttribute(ModelMap model) {
 		Map<String, String> civilityList = new LinkedHashMap<String, String>();
 		civilityList.put(CivilityType.MR.toString(), "Monsieur");
 		civilityList.put(CivilityType.MRS.toString(), "Madame");
 		civilityList.put(CivilityType.MISS.toString(), "Demoiselle");
 		model.addAttribute("civilityList", civilityList);
-
-		Map<String, String> skill = new LinkedHashMap<String, String>();
-		skill.put("Hibernate", "Hibernate");
-		skill.put("Spring", "Spring");
-		skill.put("Struts", "Struts");
-		skill.put("Groovy", "Groovy");
-		skill.put("Grails", "Grails");
-		model.addAttribute("javaSkillList", skill);
-
-		List<Integer> numbers = new ArrayList<Integer>();
-		numbers.add(1);
-		numbers.add(2);
-		numbers.add(3);
-		numbers.add(4);
-		numbers.add(5);
-		model.addAttribute("numberList", numbers);
-
+		
 		Map<String, String> country = new LinkedHashMap<String, String>();
 		country.put(CityDeMaroc.Casablanca.toString(), "Casablanca One");
-//		country.put("CN", "China");
-//		country.put("SG", "Singapore");
 		model.addAttribute("cityList", country);
+
 	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
+
+		ModelAndView model = new ModelAndView();
+		if (error != null) {
+			model.addObject("error", getErrorMessage(request, "SPRING_SECURITY_LAST_EXCEPTION"));
+		}
+
+		if (logout != null) {
+			model.addObject("msg", "You've been logged out successfully.");
+		}
+		model.setViewName(PAGE_CONNEXION);
+
+		return model;
+
+	}
+	
+	// customize the error message
+	private String getErrorMessage(HttpServletRequest request, String key) {
+
+		Exception exception = (Exception) request.getSession().getAttribute(key);
+
+		String error = "";
+		if (exception instanceof BadCredentialsException) {
+			error = "Invalid username and password!";
+		} else if (exception instanceof LockedException) {
+			error = exception.getMessage();
+		} else {
+			exception.printStackTrace();
+			error = "Votre compte est désactivé";
+		}
+
+		return error;
+	}
+	
 }

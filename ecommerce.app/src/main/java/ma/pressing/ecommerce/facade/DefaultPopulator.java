@@ -1,5 +1,5 @@
 package ma.pressing.ecommerce.facade;
 
-public interface Populator<SOURCE, TARGET> {
+public interface DefaultPopulator<SOURCE, TARGET> {
 	void populate(final SOURCE source, final TARGET target);
 }

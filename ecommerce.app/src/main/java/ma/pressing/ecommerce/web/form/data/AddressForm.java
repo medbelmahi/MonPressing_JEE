@@ -13,8 +13,16 @@ public class AddressForm {
 	private String codePostal;
 	@Length(min=10, max=10)
 	private String tel;
+	@NotEmpty
+	private String street;
 	
 	
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
 	public String getCity() {
 		return city;
 	}

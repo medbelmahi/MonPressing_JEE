@@ -60,7 +60,7 @@
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="valider-votre-linge.html">Verifiez et Confirmez</a></li>
-												<li><a href="<c:url value="/Se_Connecter" />">Espace Client</a></li>
+												<li><a href="<c:url value="/login" />">Espace Client</a></li>
 												<!--<li><a href="about-me.html">About Me</a></li>-->
 											</ul> 
 										</li>

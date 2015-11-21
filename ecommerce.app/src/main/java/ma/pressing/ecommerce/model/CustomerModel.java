@@ -18,11 +18,8 @@ public class CustomerModel extends UserModel {
 	@Enumerated(EnumType.STRING)
 	private CivilityType civility;
 	
-	@Column(name="FIRST_NAME")
-	private String firstName;
-	
-	@Column(name="LAST_NAME")
-	private String lastName;
+	@Column(name="COMPLET_NAME")
+	private String completName;
 	
 	@OneToOne
 	private AddressModel addressModel;
@@ -37,22 +34,14 @@ public class CustomerModel extends UserModel {
 		this.addressModel = addressModel;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	
+	public String getCompletName() {
+		return completName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setCompletName(String completName) {
+		this.completName = completName;
 	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 
 	public CivilityType getCivility() {
 		return civility;

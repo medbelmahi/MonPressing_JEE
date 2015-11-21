@@ -42,7 +42,7 @@
 										<div class="featured-box featured-box-primary align-left mt-xlg">
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Espace Client</h4>
-												<form action="<c:url value='/j_spring_security_check' />" id="frmSignIn" method="post">
+												<form action="<c:url value='/login' />" id="frmSignIn" method="post">
 													<div class="row">
 														<div class="form-group">
 															<div class="col-md-12">

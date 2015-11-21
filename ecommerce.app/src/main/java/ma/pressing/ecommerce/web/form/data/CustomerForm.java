@@ -2,7 +2,6 @@ package ma.pressing.ecommerce.web.form.data;
 
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class CustomerForm {
@@ -14,9 +13,7 @@ public class CustomerForm {
 	@NotEmpty
 	private String confirmPassword;
 	@NotEmpty
-	private String firstName;
-	@NotEmpty
-	private String lastName;
+	private String completName;
 	
 	@NotEmpty
 	private String civility;
@@ -69,18 +66,14 @@ public class CustomerForm {
 	}
 	
 	
-	public String getFirstName() {
-		return firstName;
+	public String getCompletName() {
+		return completName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+	public void setCompletName(String completName) {
+		this.completName = completName;
 	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+
 	public AddressForm getAddressFrom() {
 		return addressFrom;
 	}

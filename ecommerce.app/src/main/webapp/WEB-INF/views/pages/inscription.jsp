@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -46,33 +47,47 @@
 										<div class="featured-box featured-box-primary align-left mt-xlg">
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Inscription</h4>
-												<form action="/" id="frmSignUp" method="post">
+												<spring:url value="/NouvelleInscription" var="userActionUrl" />
+												<form:form action="${userActionUrl}" modelAttribute="userForm" id="frmSignUp" method="post">
 													<div class="row">
+													<spring:bind path="completName">
 														<div class="form-group">
 															<div class="col-md-12">
 																<label>Nom Complet </label>
-																<input type="text" value="" class="form-control input-lg">
+																<form:input type="text" path="completName" class="form-control input-lg" id="completName" placeholder="Nom Complet" />
+																<form:errors path="completName" class="control-label" />
 															</div>
 														</div>
+													</spring:bind>
 													</div>
 													<div class="row">
-														<div class="form-group">
-															<div class="col-md-12">
-																<label>Adresse E-mail </label>
-																<input type="text" value="" class="form-control input-lg">
+														<spring:bind path="email">
+															<div class="form-group">
+																<div class="col-md-12">
+																	<label>Adresse E-mail </label>
+																	<form:input path="email" class="form-control input-lg" id="email" placeholder="Email" />
+																	<form:errors path="email" class="control-label" />
+																</div>
 															</div>
-														</div>
+														</spring:bind>
 													</div>
 													<div class="row">
+													
 														<div class="form-group">
+														<spring:bind path="password">
 															<div class="col-md-6">
 																<label>Mot de passe</label>
-																<input type="password" value="" class="form-control input-lg">
+																<form:password path="password" value="" class="form-control input-lg" id="password" placeholder="Mot de passe" />
+																<form:errors path="password" class="control-label" />
 															</div>
+														</spring:bind>
+														<spring:bind path="confirmPassword">
 															<div class="col-md-6">
 																<label>Confirmer le Mot de passe</label>
-																<input type="password" value="" class="form-control input-lg">
+																<form:password path="confirmPassword" class="form-control input-lg" id="password" placeholder="Mot de passe" />
+																<form:errors path="confirmPassword" class="control-label" />
 															</div>
+														</spring:bind>
 														</div>
 													</div>
 													<div class="row">
@@ -122,7 +137,7 @@
 															<input type="submit" value="S'inscrire" class="btn btn-primary pull-right mb-xl" data-loading-text="Loading...">
 														</div>
 													</div>
-												</form>
+												</form:form>
 											</div>
 										</div>
 									</div>

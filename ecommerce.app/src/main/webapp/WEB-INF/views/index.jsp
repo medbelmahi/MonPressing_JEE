@@ -1,4 +1,4 @@
-<%@ page trimDirectiveWhitespaces="true" language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -349,7 +349,7 @@
 						</div>
 					</div>
 				</section>
-				<li class="isotope-item appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400">
+				<li class="isotope-item appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"></li>
 				<div class="container">
 					
 					<div class="row">
@@ -364,12 +364,12 @@
 				
 				
 
-				<footer class="short" id="footer" >
+			<footer class="short" id="footer" >
 					
 					<include:include_footer />
 					
 			</footer>
-		</div>
+<!-- 		</div> -->
 		
 		<include:include_home_page_javascript />
 		

@@ -64,7 +64,7 @@
 														<spring:bind path="email">
 															<div class="form-group">
 																<div class="col-md-12">
-																	<label>Adresse E-mail </label>
+																	<label>Adresse E-mail</label>
 																	<form:input path="email" class="form-control input-lg" id="email" placeholder="Email" />
 																	<form:errors path="email" class="control-label" />
 																</div>
@@ -101,7 +101,7 @@
 													<div class="row">
 														<div class="form-group">
 															<div class="col-md-6">
-																<label>TÃ©lÃ©phone </label>
+																<label>Téléphone </label>
 																<input type="text" value="" class="form-control input-lg">
 															</div>
 													
@@ -114,12 +114,13 @@
 													<div class="row">
 														<div class="form-group">
 															<div class="col-md-6">
-																<label >CivilitÃ©</label>
-																<select class="form-control input-lg mb-md">
-																	<option>...</option>
-																	<option>M</option>
-																	<option>Mme</option>
-																</select>
+																<label>Ville</label>
+																
+																<form:select path="addressFrom.city" class="form-control input-lg mb-md">
+																	<form:option value="NONE" label="--- Select ---" />
+																	<form:options items="${cityList}" />
+																</form:select>
+																
 															</div>
 															<div class="col-md-6">
 																<label>Type</label>

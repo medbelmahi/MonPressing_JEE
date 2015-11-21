@@ -48,7 +48,4 @@ public class AddressForm {
 		this.tel = tel;
 	}
 	
-	
-	
-
 }

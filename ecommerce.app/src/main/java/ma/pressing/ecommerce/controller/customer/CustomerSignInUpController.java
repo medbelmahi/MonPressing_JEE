@@ -3,6 +3,7 @@ package ma.pressing.ecommerce.controller.customer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +29,14 @@ import ma.pressing.ecommerce.web.form.data.CustomerForm;
 @Controller
 public class CustomerSignInUpController {
 
-	public static String PAGE_INSCRIPTION = "pages/inscription";
+	public static String PAGE_INSCRIPTION = "pages/customer_inscription";
 	public static String PAGE_CONNEXION = "pages/customer_connexion";
 	
 	@Autowired
 	DefaultCustomerFacade cutomerFacade;
 	
+	@Resource(name = "customerFormValidator")
+	Validator customerFormValidator;
 	
 	
 	@RequestMapping(value="/Inscription", method = RequestMethod.GET)
@@ -48,6 +52,8 @@ public class CustomerSignInUpController {
 	
 	@RequestMapping(value="/NouvelleInscription", method = RequestMethod.POST)
 	public String addUserForm(@ModelAttribute("userForm") @Validated CustomerForm userForm, BindingResult result, ModelMap model) {
+		
+		customerFormValidator.validate(userForm, result);
 		
 		if(result.hasErrors()){
 			populateDefaultUserFormAttribute(model);

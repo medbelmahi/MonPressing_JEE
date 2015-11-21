@@ -10,7 +10,7 @@ import org.springframework.validation.Validator;
 import ma.pressing.ecommerce.service.CustomerService;
 import ma.pressing.ecommerce.web.form.data.CustomerForm;
 
-@Component
+@Component("customerFormValidator")
 public class CustomerFormValidator implements Validator{
 	
 	@Autowired
@@ -29,6 +29,9 @@ public class CustomerFormValidator implements Validator{
 		
 		if(!emailValidtor.valid(customerFrom.getEmail())){
 			errors.reject("email", "Pattern.userForm.email");
+		}
+		if(customerFrom.getPassword() != null && customerFrom.getPassword().equals(customerFrom.getConfirmPassword())){
+			errors.reject("confirmPassword", "Diff.userform.confirmPassword");
 		}
 	}
 

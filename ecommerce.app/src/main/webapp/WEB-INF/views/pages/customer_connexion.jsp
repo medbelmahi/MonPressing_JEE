@@ -42,6 +42,21 @@
 										<div class="featured-box featured-box-primary align-left mt-xlg">
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Espace Client</h4>
+												<c:if test="${not empty error}">
+													<div class="error">${error}</div>
+													<div role="alert" class="alert alert-danger alert-dismissible">
+														<button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+														<strong><i class="fa fa-warning"></i>Erreur!</strong> se reprodui pendant la connexion.
+														<ul>
+															<li>${error}</li>
+														</ul>
+													</div>
+												</c:if>
+												<c:if test="${not empty msg}">
+													<div class="alert alert-success">
+														<strong><i class="fa fa-thumbs-o-up"></i> </strong> ${msg}
+													</div>
+												</c:if>
 												<form action="<c:url value='/login' />" id="frmSignIn" method="post">
 													<div class="row">
 														<div class="form-group">

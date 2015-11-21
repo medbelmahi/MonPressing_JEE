@@ -100,15 +100,20 @@
 													</div>
 													<div class="row">
 														<div class="form-group">
-															<div class="col-md-6">
-																<label>Téléphone </label>
-																<input type="text" value="" class="form-control input-lg">
-															</div>
-													
-															<div class="col-md-6">
-																<label>Code Postal </label>
-																<input type="text" value="" class="form-control input-lg">
-															</div>
+															<spring:bind path="addressFrom.tel">
+																<div class="col-md-6">
+																	<label>Téléphone </label>
+																	<form:input path="addressFrom.tel" type="text" class="form-control input-lg" id="tel" placeholder="Tel ex : 0610990909" />
+																	<form:errors path="addressFrom.tel" class="control-label" />
+																</div>
+															</spring:bind>
+															<spring:bind path="addressFrom.tel">
+																<div class="col-md-6">
+																	<label>Code Postal </label>
+																	<form:input path="addressFrom.codePostal" type="text" class="form-control input-lg" id="codePostal" placeholder="ex : 25001" />
+																	<form:errors path="addressFrom.codePostal" class="control-label" />
+																</div>
+															</spring:bind>
 														</div>
 													</div>
 													<div class="row">

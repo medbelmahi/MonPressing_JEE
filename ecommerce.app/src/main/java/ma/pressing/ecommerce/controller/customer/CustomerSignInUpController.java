@@ -108,7 +108,7 @@ public class CustomerSignInUpController {
 
 		String error = "";
 		if (exception instanceof BadCredentialsException) {
-			error = "Invalid username and password!";
+			error = "Email ou Mot de passe incorrect !";
 		} else if (exception instanceof LockedException) {
 			error = exception.getMessage();
 		} else {

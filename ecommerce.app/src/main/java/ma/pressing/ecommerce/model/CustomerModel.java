@@ -21,10 +21,20 @@ public class CustomerModel extends UserModel {
 	@Column(name="COMPLET_NAME")
 	private String completName;
 	
+	@Column(name="IS_B2B")
+	private boolean b2b;
+	
 	@OneToOne
 	private AddressModel addressModel;
 	
 
+	public boolean isB2b() {
+		return b2b;
+	}
+
+	public void setB2b(boolean b2b) {
+		this.b2b = b2b;
+	}
 
 	public AddressModel getAddressModel() {
 		return addressModel;

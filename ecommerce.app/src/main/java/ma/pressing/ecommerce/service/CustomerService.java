@@ -11,4 +11,5 @@ public interface CustomerService {
 	public void delete(CustomerModel customerModel);
 	public CustomerModel findCustomerById(Long idCustomer);
 	public List<CustomerModel> getAllCustomers();
+	public CustomerModel findCustomerByAttribut(String attribute, Object value);
 }

@@ -16,7 +16,6 @@ public class AddressForm {
 	@NotEmpty
 	private String street;
 	
-	
 	public String getStreet() {
 		return street;
 	}

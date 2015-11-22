@@ -80,6 +80,11 @@ public class CustomerSignInUpController {
 		Map<String, String> country = new LinkedHashMap<String, String>();
 		country.put(CityDeMaroc.Casablanca.toString(), "Casablanca One");
 		model.addAttribute("cityList", country);
+		
+		Map<String, String> typeCompte = new LinkedHashMap<>();
+		typeCompte.put("false", "Particulier");
+		typeCompte.put("true", "Professionnel");
+		model.addAttribute("typeCompte", typeCompte);
 
 	}
 

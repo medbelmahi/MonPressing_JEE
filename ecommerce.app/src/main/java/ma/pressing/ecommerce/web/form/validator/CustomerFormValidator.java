@@ -30,6 +30,9 @@ public class CustomerFormValidator implements Validator{
 		if(!emailValidtor.valid(customerFrom.getEmail())){
 			errors.reject("email", "Pattern.userForm.email");
 		}
+		if(customerService.findCustomerByAttribut("email", customerFrom.getEmail()) != null){
+			errors.reject("email", "Used.userForm.email");
+		}
 		if(customerFrom.getPassword() != null && !customerFrom.getPassword().equals(customerFrom.getConfirmPassword())){
 			errors.reject("confirmPassword", "Diff.userform.confirmPassword");
 		}

@@ -48,7 +48,7 @@ public class ControllerTest {
 		
 		UserRole userRole = new UserRole();
 		userRole.setUser(user);
-		userRole.setRole("ROLE_USER");
+		userRole.setRole("ROLE_B2C_CUSTOMER");
 		userRole = userRoleService.save(userRole);
 		
 		UserRole userRole2 = new UserRole();

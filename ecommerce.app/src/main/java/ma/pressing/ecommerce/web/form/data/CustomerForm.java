@@ -21,8 +21,19 @@ public class CustomerForm {
 	@NotNull
 	private AddressForm addressFrom;
 	
+	@NotEmpty
+	private String b2b;
 	
 	
+	
+	public String getB2b() {
+		return b2b;
+	}
+
+	public void setB2b(String b2b) {
+		this.b2b = b2b;
+	}
+
 	public CustomerForm() {
 		super();
 		addressFrom = new AddressForm();

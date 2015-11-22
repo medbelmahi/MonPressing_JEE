@@ -10,10 +10,12 @@ import ma.pressing.ecommerce.facade.DefaultPopulator;
 import ma.pressing.ecommerce.facade.data.CustomerData;
 import ma.pressing.ecommerce.model.AddressModel;
 import ma.pressing.ecommerce.model.CustomerModel;
+import ma.pressing.ecommerce.model.UserRole;
 import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
 import ma.pressing.ecommerce.model.enumeration.CivilityType;
 import ma.pressing.ecommerce.service.AddressService;
 import ma.pressing.ecommerce.service.CustomerService;
+import ma.pressing.ecommerce.service.UserRoleService;
 import ma.pressing.ecommerce.util.PasswordEncoderGenerator;
 import ma.pressing.ecommerce.web.form.data.CustomerForm;
 
@@ -29,6 +31,9 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 	@Resource(name="customerPopulator")
 	private DefaultPopulator<CustomerModel, CustomerData> customerPopulator;
 	
+	@Autowired
+	private UserRoleService userRoleService;
+	
 	
 	@Override
 	public CustomerData addNewCustomer(CustomerForm customerForm) {
@@ -40,6 +45,7 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 		customerModel.setCompletName(customerForm.getCompletName());
 		customerModel.setCivility(CivilityType.valueOf(customerForm.getCivility()));
 		customerModel.setPassword(PasswordEncoderGenerator.getHashedPassword(customerForm.getPassword()));
+		customerModel.setB2b("true".equals(customerForm.getB2b()));
 		
 		addressModel.setCity(CityDeMaroc.valueOf(customerForm.getAddressFrom().getCity()));
 		addressModel.setDistrict(customerForm.getAddressFrom().getDistrict());
@@ -50,6 +56,15 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 		addressModel = addressService.save(addressModel);
 		customerModel.setAddressModel(addressModel);
 		customerModel = customerService.save(customerModel);
+		
+		UserRole userRole = new UserRole();
+		userRole.setUser(customerModel);
+		if(customerModel.isB2b()){
+			userRole.setRole("ROLE_B2B_CUSTOMER");
+		}else{
+			userRole.setRole("ROLE_B2C_CUSTOMER");
+		}
+		userRole = userRoleService.save(userRole);
 		
 		CustomerData customerData = new CustomerData();
 		customerPopulator.populate(customerModel, customerData);

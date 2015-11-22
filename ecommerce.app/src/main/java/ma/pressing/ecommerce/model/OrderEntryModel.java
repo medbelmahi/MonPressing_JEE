@@ -15,7 +15,7 @@ public class OrderEntryModel extends AbstractModel {
 	private static final long serialVersionUID = 1337841475330111548L;
 	
 	@OneToOne
-	private ProductModel product;
+	private OurServiceModel productService;
 	
 	@Column(name="QUANTITY")
 	private Integer quantity;

@@ -7,4 +7,5 @@ import ma.pressing.ecommerce.web.form.data.CustomerForm;
 public interface DefaultCustomerFacade {
 	
 	public CustomerData addNewCustomer(CustomerForm customerForm);
+	public CustomerData getCurrentCustomer();
 }

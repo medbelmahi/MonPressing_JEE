@@ -1,9 +1,14 @@
 package ma.pressing.ecommerce.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,6 +32,9 @@ public class CustomerModel extends UserModel {
 	@OneToOne
 	private AddressModel addressModel;
 	
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+	private List<OrderModel> orders = new ArrayList<OrderModel>(0);
 
 	public boolean isB2b() {
 		return b2b;
@@ -59,6 +67,16 @@ public class CustomerModel extends UserModel {
 
 	public void setCivility(CivilityType civility) {
 		this.civility = civility;
-	}	
+	}
+
+	public List<OrderModel> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<OrderModel> orders) {
+		this.orders = orders;
+	}
+	
+	
 	
 }

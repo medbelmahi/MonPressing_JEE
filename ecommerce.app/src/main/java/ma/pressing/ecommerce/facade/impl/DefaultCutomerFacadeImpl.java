@@ -3,6 +3,8 @@ package ma.pressing.ecommerce.facade.impl;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
 
 import ma.pressing.ecommerce.facade.DefaultCustomerFacade;
@@ -70,6 +72,26 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 		customerPopulator.populate(customerModel, customerData);
 		
 		return customerData;
+	}
+
+
+	@Override
+	public CustomerData getCurrentCustomer() {
+		Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (user != null && user instanceof User) {
+
+			String name =((User) user).getUsername(); // get logged in username
+
+			CustomerModel customerModel = customerService.findCustomerByAttribut("email", name);
+
+			if (customerModel != null) {
+				CustomerData customerData = new CustomerData();
+				customerPopulator.populate(customerModel, customerData);
+				
+				return customerData;
+			}
+		}
+		return null;
 	}
 	
 }

@@ -76,7 +76,7 @@
 																	Prix
 																</th>
 																<th class="product-quantity">
-																	QuantitÃ©
+																	Quantité
 																</th>
 																<th class="product-subtotal">
 																	Total
@@ -104,6 +104,10 @@
 																			<option value="Linge4">Votre Linge 4</option>
 																			<option value="Linge4">Votre Linge 5</option>
 																	</select>
+																	<form:select path="produt" class="form-control input-lg mb-md">
+																	<form:option value="NONE" label="--- choisir une lingne ---" />
+																	<form:options items="${civilityList}" />
+																</form:select>
 																</td>
 																
 																<td class="form-group">

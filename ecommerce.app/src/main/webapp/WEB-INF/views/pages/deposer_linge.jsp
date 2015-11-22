@@ -63,9 +63,9 @@
 																<th class="product-remove">
 																	&nbsp;
 																</th>
-																<!--<th class="product-thumbnail">
+																<th class="product-thumbnail">
 																	&nbsp;
-																</th>-->
+																</th>
 																<th class="product-name">
 																	Votre linge
 																</th>
@@ -76,7 +76,7 @@
 																	Prix
 																</th>
 																<th class="product-quantity">
-																	QuantitÃ©
+																	Quantité
 																</th>
 																<th class="product-subtotal">
 																	Total

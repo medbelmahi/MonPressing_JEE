@@ -75,7 +75,25 @@
 											
 											</ul>
 											-->
-											
+											<li class="dropdown">
+														<a class="dropdown" href="#">
+															<span class="name">User Name</span>
+															
+															</a>
+														
+															<ul class="dropdown-menu">
+																
+																<li>
+																	<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+																</li>
+
+																<li>
+																	<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+																</li>
+															</ul>
+														
+														
+													</li>
 									</ul>
 								</nav>
 							</div>

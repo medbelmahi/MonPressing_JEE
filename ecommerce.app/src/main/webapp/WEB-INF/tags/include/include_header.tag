@@ -45,7 +45,7 @@
 										</li>
 										
 										<li class="dropdown">
-											<a class="dropdown" href="deposer-linge.html">
+											<a class="dropdown" href="deposer_linge.html">
 												Comment ça marche ?
 											</a>
 											<ul class="dropdown-menu">
@@ -55,7 +55,7 @@
 											</ul> 
 										</li>
 										<li class="dropdown">
-											<a class="dropdown" href="deposer-linge.html">
+											<a class="dropdown" href="<c:url value="/deposer_linge.html" />">
 												Déposez Votre Linge
 											</a>
 											<ul class="dropdown-menu">

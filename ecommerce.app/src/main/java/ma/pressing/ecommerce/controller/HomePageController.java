@@ -14,7 +14,7 @@ public class HomePageController {
 	public static String PAGE_NOS_SERVICE = "pages/nos_services";
 	public static String PAGE_NOS_TARIFS = "pages/nos_tarifs";
 	public static String PAGE_CONTACT = "pages/contact";
-
+	public static String PAGE_DEPOSER_LIGNE = "pages/deposer_linge";
 	
 	
 	
@@ -55,7 +55,18 @@ public class HomePageController {
 		
 		return model;
 	}
-
+	
+	
+	@RequestMapping(value = { "/deposer_linge.html", "/Deposer_Votre_Ligne" }, method = RequestMethod.GET)
+	public ModelAndView deposerVotreLigne(){
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName(PAGE_DEPOSER_LIGNE);
+		
+		return model;
+	}
+	
+	
 	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
 

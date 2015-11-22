@@ -52,7 +52,7 @@
 		address: "Casablanca, Riad Oulfa",
 		html: "<strong>Mon Pressing</strong><br>Riad Oulfa,18 Imm 3",
 		icon: {
-			image: "img/pin.png",
+			image: src="<c:url value="/resources/img/pin.png" />",
 			iconsize: [26, 46],
 			iconanchor: [12, 46]
 		},

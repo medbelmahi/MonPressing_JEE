@@ -34,7 +34,7 @@
 												NOS SERVICES
 											</a>
 											<ul class="dropdown-menu">
-												<li><a href="valider-votre-linge.html">CE / PROFESSIONNELS</a></li>
+												<li><a href="<c:url value="/mp_ce_professionnels" />" >CE / PROFESSIONNELS</a></li>
 											</ul> 
 									
 										</li>

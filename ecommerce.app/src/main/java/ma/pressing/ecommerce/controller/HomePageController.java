@@ -15,7 +15,7 @@ public class HomePageController {
 	public static String PAGE_NOS_TARIFS = "pages/nos_tarifs";
 	public static String PAGE_CONTACT = "pages/contact";
 	public static String PAGE_DEPOSER_LIGNE = "pages/deposer_linge";
-	
+	public static String PAGE_CE_PROFESSIONNELS = "pages/mp_ce_professionnels";
 	
 	
 	@RequestMapping(value = { "/", "/index.html", "/welcome**" }, method = RequestMethod.GET)
@@ -34,6 +34,15 @@ public class HomePageController {
 		ModelAndView model = new ModelAndView();
 		
 		model.setViewName(PAGE_NOS_SERVICE);
+		
+		return model;
+	}
+	
+	@RequestMapping(value = { "/ce_professionnel.html", "/mp_ce_professionnels" }, method = RequestMethod.GET)
+	public ModelAndView ceProfePage(){
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName(PAGE_CE_PROFESSIONNELS);
 		
 		return model;
 	}

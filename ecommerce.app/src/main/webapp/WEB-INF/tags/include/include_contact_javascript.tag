@@ -46,7 +46,7 @@
 			- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
 
 	*/
-
+//Google
 	// Map Markers
 	var mapMarkers = [{
 		address: "Casablanca, Riad Oulfa",

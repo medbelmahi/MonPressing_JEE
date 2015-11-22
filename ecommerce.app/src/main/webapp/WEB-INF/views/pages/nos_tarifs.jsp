@@ -34,7 +34,7 @@
 						<div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1, "animateOut": "fadeOut", "autoplay": true, "autoplayTimeout": 3000}'>
 							<div>
 								<span class="img-thumbnail">
-									<img alt="" class="img-responsive img-rounded" src="<c:url value="/resources/img/slides/slide-bg-1.jpg" />">
+									<img alt="" class="img-responsive img-rounded" src="<c:url value="/resources/img/slides/slide-bg-3.jpg" />">
 								</span>
 							</div>
 						</div>

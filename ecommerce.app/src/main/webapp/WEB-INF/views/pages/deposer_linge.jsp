@@ -16,31 +16,31 @@
 
 		<title>Linge | Mon Pressing - Pressing Industriel</title>	
 
-		<include:include_commen_style />
+		
 
+		<include:include_commen_style />
 
 	</head>
 	<body>
 
 		<div class="body">
-		
-		<include:include_header />
+				<include:include_header />
 
 
 			<div role="main" class="main shop">
-			
+			<section class="page-header">
 			<div class="row center">
 					<div class="col-md-12 appear-animation" data-appear-animation="fadeInDown" data-appear-animation-delay="200">
 						<div class="owl-carousel owl-theme mb-none" data-plugin-options='{"items": 1, "animateOut": "fadeOut", "autoplay": true, "autoplayTimeout": 3000}' >
 							<div>
 								<span class="img-thumbnail">
-									<img alt="" class="img-responsive img-rounded" src="img/slides/slide-bg-2.jpg">
+									<img alt="" class="img-responsive img-rounded" src="<c:url value="/resources/img/slides/slide-bg-3.jpg" />">
 								</span>
 							</div>
 						</div>
 					</div>
 				</div>
-			
+			</section>
 				<div class="container">
 
 					<div class="row">
@@ -76,7 +76,7 @@
 																	Prix
 																</th>
 																<th class="product-quantity">
-																	Quantité
+																	QuantitÃ©
 																</th>
 																<th class="product-subtotal">
 																	Total
@@ -90,11 +90,11 @@
 																		<i class="fa fa-times"></i>
 																	</a>
 																</td>
-																<!--<td class="product-thumbnail">
+																<td class="product-thumbnail">
 																	<a href="shop-product-sidebar.html">
-																		<img width="100" height="100" alt="" class="img-responsive" src="img/products/product-1.jpg">
+																		<img width="100" height="100" alt="" class="img-responsive" src="<c:url value="/resources/img/products/product-1.jpg" />">
 																	</a>
-																</td>-->
+																</td>
 																<td class="product-name">
 																	<select data-msg-required="Faire un choix." class="form-control" name="subject" id="subject" required>
 																		<option value="">...</option>
@@ -270,54 +270,8 @@
 				
 			</footer>
 		</div>
-
-		<!-- Vendor -->
-
-		<!--[if lt IE 9]>
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<![endif]-->
-		<!--[if gte IE 9]><!-->
-		<script src="vendor/jquery/jquery.js"></script>
-		<!--<![endif]-->
-		<script src="vendor/jquery.appear/jquery.appear.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.js"></script>
-		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.js"></script>
-		<script src="vendor/common/common.js"></script>
-		<script src="vendor/jquery.validation/jquery.validation.js"></script>
-		<script src="vendor/jquery.stellar/jquery.stellar.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
-		<script src="vendor/jquery.lazyload/jquery.lazyload.js"></script>
-		<script src="vendor/isotope/jquery.isotope.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
-		<script src="vendor/vide/vide.js"></script>
 		
-		<!-- Theme Base, Components and Settings -->
-		<script src="js/theme.js"></script>
-		
-		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
-		
-		<!-- Theme Initialization Files -->
-		<script src="js/theme.init.js"></script>
-
-		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
-		<script type="text/javascript">
-		
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-12345678-1']);
-			_gaq.push(['_trackPageview']);
-		
-			(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		
-		</script>
-		 -->
+		<include:include_commen_javascript />
 
 	</body>
 </html>

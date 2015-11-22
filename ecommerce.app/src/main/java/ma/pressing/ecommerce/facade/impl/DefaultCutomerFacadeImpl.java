@@ -12,6 +12,7 @@ import ma.pressing.ecommerce.model.AddressModel;
 import ma.pressing.ecommerce.model.CustomerModel;
 import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
 import ma.pressing.ecommerce.model.enumeration.CivilityType;
+import ma.pressing.ecommerce.service.AddressService;
 import ma.pressing.ecommerce.service.CustomerService;
 import ma.pressing.ecommerce.util.PasswordEncoderGenerator;
 import ma.pressing.ecommerce.web.form.data.CustomerForm;
@@ -21,6 +22,9 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private AddressService addressService;
 	
 	@Resource(name="customerPopulator")
 	private DefaultPopulator<CustomerModel, CustomerData> customerPopulator;
@@ -43,6 +47,7 @@ public class DefaultCutomerFacadeImpl implements DefaultCustomerFacade {
 		addressModel.setStreet(customerForm.getAddressFrom().getStreet());
 		addressModel.setTel(customerForm.getAddressFrom().getTel());
 		
+		addressModel = addressService.save(addressModel);
 		customerModel.setAddressModel(addressModel);
 		customerModel = customerService.save(customerModel);
 		

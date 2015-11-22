@@ -43,7 +43,6 @@
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Espace Client</h4>
 												<c:if test="${not empty error}">
-													<div class="error">${error}</div>
 													<div role="alert" class="alert alert-danger alert-dismissible">
 														<button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
 														<strong><i class="fa fa-warning"></i>Erreur!</strong> se reprodui pendant la connexion.

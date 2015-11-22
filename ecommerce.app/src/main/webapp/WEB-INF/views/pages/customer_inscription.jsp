@@ -90,14 +90,61 @@
 														</spring:bind>
 														</div>
 													</div>
+													
+													<div class="row">
+														<div class="form-group">
+														<spring:bind path="civility">
+															<div class="col-md-6">
+																<label>Civilité</label>
+																<form:select path="civility" class="form-control input-lg mb-md">
+																	<form:option value="NONE" label="--- Select ---" />
+																	<form:options items="${civilityList}" />
+																</form:select>
+															</div>
+														</spring:bind>
+<%-- 														<spring:bind path="addressFrom.city"> --%>
+															<div class="col-md-6">
+<!-- 																<label>Type</label> -->
+<%-- 																<form:select path="addressFrom.city" class="form-control input-lg mb-md"> --%>
+<%-- 																	<form:option value="NONE" label="--- Select ---" /> --%>
+<%-- 																	<form:options items="${cityList}" /> --%>
+<%-- 																</form:select> --%>
+															</div>
+<%-- 														</spring:bind> --%>
+														</div>
+													</div>
+													
 													<div class="row">
 														<div class="form-group">
 															<div class="col-md-12">
 																<label>Adresse </label>
-																<input type="text" value="" class="form-control input-lg">
+																<form:input path="addressFrom.street" type="text" class="form-control input-lg" id="address" placeholder="ex : Rue 39 N° 19 Hay Wifaq" />
+																<form:errors path="addressFrom.street" class="control-label" />
 															</div>
 														</div>
 													</div>
+													
+													<div class="row">
+														<div class="form-group">
+														<spring:bind path="addressFrom.district">
+															<div class="col-md-6">
+																<label>Région</label>
+																<form:input path="addressFrom.district" type="text" class="form-control input-lg" id="district" placeholder="Région/Quartier" />
+																<form:errors path="addressFrom.district" class="control-label" />
+															</div>
+														</spring:bind>
+														<spring:bind path="addressFrom.city">
+															<div class="col-md-6">
+																<label>Ville</label>
+																<form:select path="addressFrom.city" class="form-control input-lg mb-md">
+																	<form:option value="NONE" label="--- Select ---" />
+																	<form:options items="${cityList}" />
+																</form:select>
+															</div>
+														</spring:bind>
+														</div>
+													</div>
+													
 													<div class="row">
 														<div class="form-group">
 															<spring:bind path="addressFrom.tel">
@@ -116,27 +163,7 @@
 															</spring:bind>
 														</div>
 													</div>
-													<div class="row">
-														<div class="form-group">
-															<div class="col-md-6">
-																<label>Ville</label>
-																
-																<form:select path="addressFrom.city" class="form-control input-lg mb-md">
-																	<form:option value="NONE" label="--- Select ---" />
-																	<form:options items="${cityList}" />
-																</form:select>
-																
-															</div>
-															<div class="col-md-6">
-																<label>Type</label>
-																<select class="form-control input-lg mb-md">
-																	<option>...</option>
-																	<option>Particuliers</option>
-																	<option>Professionnels</option>
-																</select>
-															</div>
-														</div>
-													</div>
+													
 													
 													<div class="row">
 														<div class="col-md-12">

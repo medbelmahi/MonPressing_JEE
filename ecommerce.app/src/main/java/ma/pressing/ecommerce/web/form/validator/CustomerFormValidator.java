@@ -25,12 +25,12 @@ public class CustomerFormValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		CustomerForm customerFrom = (CustomerForm) target;
 		
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty.userForm.firstName");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "completName", "NotEmpty.userForm.completName");
 		
 		if(!emailValidtor.valid(customerFrom.getEmail())){
 			errors.reject("email", "Pattern.userForm.email");
 		}
-		if(customerFrom.getPassword() != null && customerFrom.getPassword().equals(customerFrom.getConfirmPassword())){
+		if(customerFrom.getPassword() != null && !customerFrom.getPassword().equals(customerFrom.getConfirmPassword())){
 			errors.reject("confirmPassword", "Diff.userform.confirmPassword");
 		}
 	}

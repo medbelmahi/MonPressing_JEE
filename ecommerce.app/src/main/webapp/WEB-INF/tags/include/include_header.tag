@@ -9,7 +9,7 @@
 									<div class="header-column">
 										<div class="header-logo">
 											<a href="index.html">
-												<img alt="Porto" width="120" height="40" src="<c:url value="/resources/img/logo.png" />">
+												<img alt="MonPressing" width="120" height="40" src="<c:url value="/resources/img/logo.png" />">
 											</a>
 										</div>
 									</div>

@@ -27,8 +27,7 @@
 												<div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
 													<nav>
 														<ul class="nav nav-pills" id="mainNav">
-											<!-- <a class="dropdown-toggle" href="index.html">
-											-->
+											
 										<li>
 												<a href="<c:url value="/" />">ACCUEIL</a>														
 											

@@ -72,13 +72,6 @@
 										<!--  	<a class="dropdown-toggle" href="#"> -->
 												<li><a href="<c:url value="/contactez-nous.html" />">Contact</a></li>
 											
-											<!-- 
-										    <ul class="dropdown-menu">
-												<li><a href="contact.html">Contact Us - Basic</a></li>
-												<li><a href="contact-advanced.php">Contact Us - Advanced</a></li>
-											
-											</ul>
-											-->
 											<li class="dropdown">
 														<a class="dropdown" href="#">
 															<span class="name">User Name</span>

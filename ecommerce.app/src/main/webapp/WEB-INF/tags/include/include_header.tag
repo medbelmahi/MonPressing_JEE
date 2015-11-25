@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 
@@ -72,6 +73,7 @@
 										<!--  	<a class="dropdown-toggle" href="#"> -->
 												<li><a href="<c:url value="/contactez-nous.html" />">Contact</a></li>
 											
+<<<<<<< HEAD
 											<li class="dropdown">
 														<a class="dropdown" href="#">
 															<span class="name">User Name</span>
@@ -83,14 +85,36 @@
 																<li>
 																	<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
 																</li>
+=======
+											<!-- 
+										    <ul class="dropdown-menu">
+												<li><a href="contact.html">Contact Us - Basic</a></li>
+												<li><a href="contact-advanced.php">Contact Us - Advanced</a></li>
+											
+											</ul>
+											-->
+										
+										<c:if test="${not empty customer}">
 
-																<li>
-																	<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
-																</li>
-															</ul>
-														
-														
-													</li>
+											<sec:authorize
+												access="hasRole('ROLE_B2B_CUSTOMER') or hasRole('ROLE_B2C_CUSTOMER')">
+												<li class="dropdown"><a class="dropdown" href="#">
+														<span class="name">${customer.completName}</span>
+												</a>
+
+													<ul class="dropdown-menu">
+														<li><a role="menuitem" tabindex="-1"
+															href="<c:url value="/Mon_Compte" />"><i
+																class="fa fa-user"></i> My Profile</a></li>
+
+														<li><a role="menuitem" tabindex="-1"
+															href="<c:url value="/login?logout" />"><i
+																class="fa fa-power-off"></i> Logout</a></li>
+													</ul></li>
+											</sec:authorize>
+>>>>>>> 41dd1deeb5de7c0e306a0b3f842369c28a6e3e7f
+
+										</c:if>
 									</ul>
 								</nav>
 							</div>

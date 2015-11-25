@@ -32,7 +32,8 @@ public class CustomerPopulator implements DefaultPopulator<CustomerModel, Custom
 		target.setEmail(source.getEmail());
 		target.setCivility(civilityValues.get(source.getCivility()));
 		target.setCompletName(source.getCompletName());
-
+		target.setB2b(source.isB2b());
+		
 		AddressData addressData = new AddressData();
 		addressPopulator.populate(source.getAddressModel(), addressData);
 		

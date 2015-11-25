@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -23,7 +22,7 @@
 	        <props>
 	            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 	            <prop key="hibernate.show_sql">true</prop>
-	            <prop key="hibernate.hbm2ddl.auto">update</prop>
+	            <prop key="hibernate.hbm2ddl.auto">create</prop>
 	            <prop key="hibernate.enable_lazy_load_no_trans">true</prop>
 	        </props>
 	    </property>
@@ -39,6 +38,7 @@
 				<value>ma.pressing.ecommerce.model.PriceModel</value>
 				<value>ma.pressing.ecommerce.model.ProductModel</value>
 				<value>ma.pressing.ecommerce.model.AddressModel</value>
+				<value>ma.pressing.ecommerce.model.ImageMediaModel</value>
 			</list>
 	    </property>
 	</bean>

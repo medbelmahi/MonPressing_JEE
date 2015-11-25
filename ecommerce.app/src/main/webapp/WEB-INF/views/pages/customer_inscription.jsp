@@ -102,15 +102,15 @@
 																</form:select>
 															</div>
 														</spring:bind>
-<%-- 														<spring:bind path="addressFrom.city"> --%>
+														<spring:bind path="b2b">
 															<div class="col-md-6">
-<!-- 																<label>Type</label> -->
-<%-- 																<form:select path="addressFrom.city" class="form-control input-lg mb-md"> --%>
+																<label>Type</label>
+																<form:select path="b2b" class="form-control input-lg mb-md">
 <%-- 																	<form:option value="NONE" label="--- Select ---" /> --%>
-<%-- 																	<form:options items="${cityList}" /> --%>
-<%-- 																</form:select> --%>
+																	<form:options items="${typeCompte}" />
+																</form:select>
 															</div>
-<%-- 														</spring:bind> --%>
+														</spring:bind>
 														</div>
 													</div>
 													

@@ -50,6 +50,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public void setUserDao(CustomerDao userDao) {
 		this.userDao = userDao;
 	}
+
+	@Override
+	public CustomerModel findCustomerByAttribut(String attribute, Object value) {
+		return userDao.findOneByAttribut(attribute, value);
+	}
 	
 	
 

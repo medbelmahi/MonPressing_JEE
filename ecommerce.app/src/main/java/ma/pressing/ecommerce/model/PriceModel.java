@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import ma.pressing.ecommerce.model.enumeration.CustomerGroup;
@@ -25,6 +28,10 @@ public class PriceModel extends AbstractModel {
 	private CustomerGroup customerGroup;
 	@Column(name="SCALE")
 	private Integer scale;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID", nullable = false)
+	private OurServiceModel service;
 	
 	public CustomerGroup getCustomerGroup() {
 		return customerGroup;
@@ -50,5 +57,19 @@ public class PriceModel extends AbstractModel {
 	public void setDateEndValidation(Date dateEndValidation) {
 		this.dateEndValidation = dateEndValidation;
 	}
+	public Integer getScale() {
+		return scale;
+	}
+	public void setScale(Integer scale) {
+		this.scale = scale;
+	}
+	public OurServiceModel getService() {
+		return service;
+	}
+	public void setService(OurServiceModel service) {
+		this.service = service;
+	}
+	
+	
 	
 }

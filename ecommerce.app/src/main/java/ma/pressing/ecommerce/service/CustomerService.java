@@ -12,4 +12,5 @@ public interface CustomerService {
 	public CustomerModel findCustomerById(Long idCustomer);
 	public List<CustomerModel> getAllCustomers();
 	public CustomerModel findCustomerByAttribut(String attribute, Object value);
+	public CustomerModel getCurrentCustomer();
 }

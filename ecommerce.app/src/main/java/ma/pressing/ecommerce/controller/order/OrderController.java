@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ma.pressing.ecommerce.facade.DefaultCustomerFacade;
 import ma.pressing.ecommerce.facade.DefaultProductFacade;
 import ma.pressing.ecommerce.facade.data.CustomerData;
+import ma.pressing.ecommerce.web.form.data.OrderForm;
 
 @Controller
 public class OrderController {
@@ -28,7 +29,8 @@ public class OrderController {
 	public ModelAndView deposerVotreLigne(){
 		ModelAndView model = new ModelAndView();
 		
-		model.addObject("products", productFacade.getAllProducts());
+		model.addObject("productsList", productFacade.getAllProducts());
+		model.addObject("orderForm", new OrderForm());
 		
 		model.setViewName(PAGE_DEPOSER_LIGNE);
 		

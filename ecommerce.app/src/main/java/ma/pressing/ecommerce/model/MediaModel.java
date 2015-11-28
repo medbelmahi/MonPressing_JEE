@@ -13,6 +13,8 @@ public class MediaModel extends AbstractModel implements Serializable {
 	@Column(name="ENABLED")
 	private boolean enabled;
 	
+	@Column(name="DEFAULT")
+	private boolean defaultMedia;
 
 	public boolean isEnabled() {
 		return enabled;
@@ -20,6 +22,14 @@ public class MediaModel extends AbstractModel implements Serializable {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public boolean isDefaultMedia() {
+		return defaultMedia;
+	}
+
+	public void setDefaultMedia(boolean defaultMedia) {
+		this.defaultMedia = defaultMedia;
 	}
 	
 	

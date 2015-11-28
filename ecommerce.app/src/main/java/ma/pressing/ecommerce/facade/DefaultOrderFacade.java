@@ -1,5 +1,7 @@
 package ma.pressing.ecommerce.facade;
 
-public interface DefaultOrderFacade {
+import ma.pressing.ecommerce.facade.data.OrderData;
 
+public interface DefaultOrderFacade {
+	public OrderData getSessionCart();
 }

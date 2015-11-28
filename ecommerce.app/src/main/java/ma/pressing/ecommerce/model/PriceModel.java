@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import ma.pressing.ecommerce.model.enumeration.CustomerGroup;
@@ -22,7 +24,9 @@ public class PriceModel extends AbstractModel {
 	@Column(name="DATE_END_VALIDATION")
 	private Date dateEndValidation;
 	@Column(name="CUSTOMER_GROUP")
+	@Enumerated(EnumType.STRING)
 	private CustomerGroup customerGroup;
+	
 	@Column(name="SCALE")
 	private Integer scale;
 	

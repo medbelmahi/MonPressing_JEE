@@ -3,6 +3,8 @@ package ma.pressing.ecommerce.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,6 +56,22 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public CustomerModel findCustomerByAttribut(String attribute, Object value) {
 		return userDao.findOneByAttribut(attribute, value);
+	}
+
+	@Override
+	public CustomerModel getCurrentCustomer() {
+		Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (user != null && user instanceof User) {
+
+			String name =((User) user).getUsername(); // get logged in username
+
+			CustomerModel customerModel = findCustomerByAttribut("email", name);
+
+			if (customerModel != null) {
+				return customerModel;
+			}
+		}
+		return null;
 	}
 	
 	

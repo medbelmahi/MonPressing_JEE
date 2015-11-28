@@ -56,7 +56,8 @@
 									<div class="col-md-12">
 										<div class="featured-box featured-box-primary align-left mt-sm">
 											<div class="box-content">
-												<form method="post" action="">
+												<c:url value="/goToValide" var="orderFormUrl" />
+												<form:form modelAttribute="orderForm" method="post" action="${orderFormUrl}">
 													<table class="shop_table cart">
 														<thead>
 															<tr>
@@ -85,7 +86,7 @@
 														</thead>
 														<tbody>
 														<c:choose>
-															<c:when test="${ empty order.entry}">
+															<c:when test="${ empty orderForm.listLingeForm}">
 															<tr class="cart_table_item" >
 																<td class="product-remove">
 																	<a title="Remove this item" class="remove" href="#">
@@ -98,33 +99,33 @@
 																	</a>
 																</td>
 																<td class="product-name">
-																	<select data-msg-required="Faire un choix." class="form-control" name="subject" id="subject" required>
+																	<!--<select data-msg-required="Faire un choix." class="form-control" name="subject" id="subject" required>
 																		<option value="">...</option>
 																			<option value="Linge1">Votre Linge 1</option>
 																			<option value="Linge2">Votre Linge 2</option>
 																			<option value="Linge3">Votre Linge 3</option>
 																			<option value="Linge4">Votre Linge 4</option>
 																			<option value="Linge4">Votre Linge 5</option>
-																	</select>
-																	<form:select path="listLingeForm.refProduct" class="form-control input-lg mb-md">
+																	</select>-->
+																	<form:select path="listLingeForm[0].refProduct" class="form-control input-lg mb-md">
 																	<form:option value="NONE" label="--- choisir une lingne ---" />
-																	<form:options items="${civilityList}" />
+<%-- 																	<form:options items="${productsList}" /> --%>
 																</form:select>
 																</td>
 																
 																<td class="form-group">
 																	
-																	<select data-msg-required="Faire un choix." class="form-control" name="subject" id="subject" required>
+																	<!-- <select data-msg-required="Faire un choix." class="form-control" name="subject" id="subject" required>
 																		<option value="">...</option>
 																			<option value="Option 1">Pressing</option>
 																			<option value="Option 2">Repassage</option>
 																			<option value="Option 3">Teinture</option>
 																			<option value="Option 4">Retoucherie</option>
 																			<option value="Option 4">Tapisserie</option>
-																	</select>
-																	<form:select path="listLingeForm.codeService" class="form-control input-lg mb-md">
+																	</select> -->
+																	<form:select path="listLingeForm[0].codeService" class="form-control input-lg mb-md">
 																	<form:option value="NONE" label="--- choisir une lingne ---" />
-																	<form:options items="${civilityList}" />
+<%-- 																	<form:options items="${productsList}" /> --%>
 																</form:select>
 																		
 																</td>
@@ -147,8 +148,8 @@
 															</tr>
 															</c:when>
 															<c:otherwise>
-																<c:forEach items="order.entry" var="entry">
-																	<entry_form:entry_cart entry="entry" />
+																<c:forEach items="${orderForm.listLingeForm}" var="entryForm">
+																	<entry_form:entry_cart lingeForm="${entryForm}" />
 																</c:forEach>
 															</c:otherwise>
 														</c:choose>
@@ -166,7 +167,7 @@
 															
 														</tbody>
 													</table>
-												</form>
+												</form:form>
 											</div>
 										</div>
 									</div>

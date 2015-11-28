@@ -5,10 +5,9 @@ public class LingeForm {
 	private String refProduct;
 	private String codeService;
 	private Integer quantity;
-//	private Double priceUnitary;
-//	private Double priceTotal;
-//	
-//	
+	private Double priceUnitary;
+	private Double priceTotal;
+
 	
 	public String getRefProduct() {
 		return refProduct;
@@ -28,7 +27,7 @@ public class LingeForm {
 	public void setCodeService(String codeService) {
 		this.codeService = codeService;
 	}
-	/*public Double getPriceUnitary() {
+	public Double getPriceUnitary() {
 		return priceUnitary;
 	}
 	public void setPriceUnitary(Double priceUnitary) {
@@ -39,6 +38,6 @@ public class LingeForm {
 	}
 	public void setPriceTotal(Double priceTotal) {
 		this.priceTotal = priceTotal;
-	}*/
+	}
 	
 }

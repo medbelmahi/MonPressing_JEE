@@ -41,7 +41,8 @@ public class OrderModel extends AbstractModel {
 	@Column(name="ORDER_STATUS")
 	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus;
-	
+	@Column(name="IS_VALIDE")
+	private boolean valide;
 	
 	@Column(name="DELIVERY_COST")
 	private BigDecimal deliveryCost;
@@ -49,6 +50,7 @@ public class OrderModel extends AbstractModel {
 	private BigDecimal collectingCost;
 	@Column(name="TOTAL_PRICE")
 	private BigDecimal TotalPrice;
+	
 
 	public List<OrderEntryModel> getOrderEntries() {
 		return orderEntries;
@@ -113,5 +115,23 @@ public class OrderModel extends AbstractModel {
 	public void setTotalPrice(BigDecimal totalPrice) {
 		TotalPrice = totalPrice;
 	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public boolean isValide() {
+		return valide;
+	}
+
+	public void setValide(boolean valide) {
+		this.valide = valide;
+	}
+	
+	
 	
 }

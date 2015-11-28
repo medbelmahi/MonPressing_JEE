@@ -8,7 +8,6 @@ public class OrderEntryData {
 	private Double totalPrice;
 	
 	private OurServiceData productService;
-	private OrderData order;
 	
 	
 	public Integer getQuantity() {
@@ -24,7 +23,9 @@ public class OrderEntryData {
 		this.priceValue = priceValue;
 	}
 	public Double getTotalPrice() {
-		return totalPrice;
+		/*return BigDecimal.valueOf(getPriceValue().doubleValue())
+				.multiply(BigDecimal.valueOf(getQuantity().longValue())).doubleValue();*/
+		return this.totalPrice;
 	}
 	public void setTotalPrice(Double totalPrice) {
 		this.totalPrice = totalPrice;
@@ -35,12 +36,5 @@ public class OrderEntryData {
 	public void setProductService(OurServiceData productService) {
 		this.productService = productService;
 	}
-	public OrderData getOrder() {
-		return order;
-	}
-	public void setOrder(OrderData order) {
-		this.order = order;
-	}
-	
-	
+
 }

@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ma.pressing.ecommerce.model.enumeration.CivilityType;
+import ma.pressing.ecommerce.model.enumeration.CustomerGroup;
 
 @Entity
 @Table(name="ECOMMERCE_CUSTOMERS")
@@ -22,6 +23,10 @@ public class CustomerModel extends UserModel {
 	@Column(name="CIVILITY")
 	@Enumerated(EnumType.STRING)
 	private CivilityType civility;
+	
+	@Column(name="CUSTOMER_GROUP")
+	@Enumerated(EnumType.STRING)
+	private CustomerGroup customerGroup;
 	
 	@Column(name="COMPLET_NAME")
 	private String completName;
@@ -76,7 +81,13 @@ public class CustomerModel extends UserModel {
 	public void setOrders(List<OrderModel> orders) {
 		this.orders = orders;
 	}
-	
-	
+
+	public CustomerGroup getCustomerGroup() {
+		return customerGroup;
+	}
+
+	public void setCustomerGroup(CustomerGroup customerGroup) {
+		this.customerGroup = customerGroup;
+	}
 	
 }

@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="include" tagdir="/WEB-INF/tags/include" %>
-
+<%@ taglib prefix="entry_form" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -84,6 +84,8 @@
 															</tr>
 														</thead>
 														<tbody>
+														<c:choose>
+															<c:when test="${ empty order.entry}">
 															<tr class="cart_table_item" >
 																<td class="product-remove">
 																	<a title="Remove this item" class="remove" href="#">
@@ -104,7 +106,7 @@
 																			<option value="Linge4">Votre Linge 4</option>
 																			<option value="Linge4">Votre Linge 5</option>
 																	</select>
-																	<form:select path="produt" class="form-control input-lg mb-md">
+																	<form:select path="listLingeForm.refProduct" class="form-control input-lg mb-md">
 																	<form:option value="NONE" label="--- choisir une lingne ---" />
 																	<form:options items="${civilityList}" />
 																</form:select>
@@ -120,6 +122,10 @@
 																			<option value="Option 4">Retoucherie</option>
 																			<option value="Option 4">Tapisserie</option>
 																	</select>
+																	<form:select path="listLingeForm.codeService" class="form-control input-lg mb-md">
+																	<form:option value="NONE" label="--- choisir une lingne ---" />
+																	<form:options items="${civilityList}" />
+																</form:select>
 																		
 																</td>
 																
@@ -139,7 +145,15 @@
 																	<span class="amount">$XXX</span>
 																</td>
 															</tr>
+															</c:when>
+															<c:otherwise>
+																<c:forEach items="order.entry" var="entry">
+																	<entry_form:entry_cart entry="entry" />
+																</c:forEach>
+															</c:otherwise>
+														</c:choose>
 															<tr>
+															
 															<td class="actions" colspan="6">
 																	<div class="actions-continue">
 																		

@@ -17,8 +17,6 @@ public class OurServiceModel extends AbstractModel {
 
 	private static final long serialVersionUID = 3104871136082457200L;
 	
-	
-	
 	@Column(name="CODE", unique=true)
 	private String code;
 	@Column(name="LABEL")
@@ -26,7 +24,7 @@ public class OurServiceModel extends AbstractModel {
 	@Column(name="DESCRIPTION")
 	private String description;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "service")
+	@OneToMany(fetch = FetchType.LAZY)
 	private List<PriceModel> prices = new ArrayList<PriceModel>();
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -64,7 +62,5 @@ public class OurServiceModel extends AbstractModel {
 	public void setProduct(ProductModel product) {
 		this.product = product;
 	}
-	
-	
 	
 }

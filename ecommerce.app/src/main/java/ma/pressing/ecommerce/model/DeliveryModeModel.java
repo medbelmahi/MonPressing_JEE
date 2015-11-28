@@ -1,9 +1,12 @@
 package ma.pressing.ecommerce.model;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,20 +15,15 @@ public class DeliveryModeModel extends AbstractModel {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="COST")
-	private BigDecimal cost;
 	@Column(name="LABEL")
 	private String label;
 	@Column(name="DESCRIPTION")
 	private String description;
 	
 	
-	public BigDecimal getCost() {
-		return cost;
-	}
-	public void setCost(BigDecimal cost) {
-		this.cost = cost;
-	}
+	@OneToMany(fetch = FetchType.LAZY)
+	private List<PriceModel> costs = new ArrayList<PriceModel>();
+	
 	public String getLabel() {
 		return label;
 	}

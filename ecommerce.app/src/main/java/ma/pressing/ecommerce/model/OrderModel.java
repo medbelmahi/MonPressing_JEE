@@ -12,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ma.pressing.ecommerce.model.enumeration.OrderStatus;
@@ -27,9 +26,9 @@ public class OrderModel extends AbstractModel {
 	@OneToMany(mappedBy="order", cascade=CascadeType.ALL)
 	private List<OrderEntryModel> orderEntries;
 	
-	@OneToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private DeliveryModeModel deliveryMode;
-	@OneToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private DeliveryModeModel collectingMode;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

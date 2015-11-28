@@ -39,6 +39,8 @@
 				<value>ma.pressing.ecommerce.model.ProductModel</value>
 				<value>ma.pressing.ecommerce.model.AddressModel</value>
 				<value>ma.pressing.ecommerce.model.ImageMediaModel</value>
+				<value>ma.pressing.ecommerce.model.DeliveryModeModel</value>
+				<value>ma.pressing.ecommerce.model.OurServiceModel</value>
 			</list>
 	    </property>
 	</bean>

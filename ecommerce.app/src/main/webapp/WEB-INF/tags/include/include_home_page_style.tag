@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/vendor/circle-flip-slideshow/css/component.css" />" media="screen">
 
 <!-- Skin CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/css/skins/default-Copy.css" />" >
+<link rel="stylesheet" href="<c:url value="/resources/css/skins/default-copy.css" />" >
 
 <!-- Theme Custom CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/custom.css" />" >

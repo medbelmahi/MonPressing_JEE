@@ -148,8 +148,8 @@
 															</tr>
 															</c:when>
 															<c:otherwise>
-																<c:forEach items="${orderForm.listLingeForm}" var="entryForm">
-																	<entry_form:entry_cart lingeForm="${entryForm}" />
+																<c:forEach items="${orderForm.listLingeForm}" var="entryForm" varStatus="loop">
+																	<entry_form:entry_cart lingeForm="${entryForm}" indexValue="loop" />
 																</c:forEach>
 															</c:otherwise>
 														</c:choose>

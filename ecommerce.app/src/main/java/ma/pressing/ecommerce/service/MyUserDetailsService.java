@@ -26,6 +26,30 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Autowired
 	private UserDao userDao;
 
+	private List<GrantedAuthority> buildUserAuthority(final Set<UserRole> userRoles) {
+
+		final Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
+
+		// Build user's authorities
+		for (final UserRole userRole : userRoles) {
+			setAuths.add(new SimpleGrantedAuthority(userRole.getRole()));
+		}
+
+		final List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);
+
+		return Result;
+	}
+
+	// Converts com.mkyong.users.model.User user to
+	// org.springframework.security.core.userdetails.User
+	private User buildUserForAuthentication(final UserModel user, final List<GrantedAuthority> authorities) {
+		return new User(user.getEmail(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
+	}
+
+	public UserDao getUserDao() {
+		return userDao;
+	}
+
 	@Override
 	public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
 
@@ -42,39 +66,17 @@ public class MyUserDetailsService implements UserDetailsService {
 
 		});*/
 		
-		UserModel user = userDao.findOneByAttribut("email", email);
-		List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
-
-		return buildUserForAuthentication(user, authorities);
-		
-
-	}
-
-	// Converts com.mkyong.users.model.User user to
-	// org.springframework.security.core.userdetails.User
-	private User buildUserForAuthentication(UserModel user, List<GrantedAuthority> authorities) {
-		return new User(user.getEmail(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
-	}
-
-	private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
-
-		Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
-
-		// Build user's authorities
-		for (UserRole userRole : userRoles) {
-			setAuths.add(new SimpleGrantedAuthority(userRole.getRole()));
+		final UserModel user = userDao.findOneByAttribut("email", email);
+		if (user != null) {
+			final List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
+			return buildUserForAuthentication(user, authorities);
+		}else {
+			return null;
 		}
 
-		List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);
-
-		return Result;
 	}
 
-	public UserDao getUserDao() {
-		return userDao;
-	}
-
-	public void setUserDao(UserDao userDao) {
+	public void setUserDao(final UserDao userDao) {
 		this.userDao = userDao;
 	}
 

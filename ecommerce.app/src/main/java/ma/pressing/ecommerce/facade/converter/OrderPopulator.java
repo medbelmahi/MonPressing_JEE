@@ -20,28 +20,41 @@ import ma.pressing.ecommerce.model.OrderModel;
 @Component
 public class OrderPopulator implements DefaultPopulator<OrderModel, OrderData> {
 
-	@Resource(name="deliveryModePopulator")
-	DefaultPopulator<DeliveryModeModel, DeliveryModeData> deliveryModePopulator;
-	
 	@Resource(name="customerPopulator")
 	DefaultPopulator<CustomerModel, CustomerData> customerPopulator;
 	
+	@Resource(name="deliveryModePopulator")
+	DefaultPopulator<DeliveryModeModel, DeliveryModeData> deliveryModePopulator;
+	
 	@Resource(name="orderEntryPopulator")
 	DefaultPopulator<OrderEntryModel, OrderEntryData> orderEntryPopulator;
+	
+	private List<OrderEntryData> getOrderEntriesData(final List<OrderEntryModel> orderEnties){
+		final List<OrderEntryData> orderEntiesData = new ArrayList<OrderEntryData>();
+		
+		for(final OrderEntryModel entry : orderEnties){
+			final OrderEntryData orderEntryData = new OrderEntryData();
+			orderEntryPopulator.populate(entry, orderEntryData);
+			
+			orderEntiesData.add(orderEntryData);
+		}
+		
+		return orderEntiesData;
+	}
 	
 	@Override
 	public void populate(final OrderModel source, final OrderData target) {
 		target.setCollectingCost(source.getCollectingCost().doubleValue());
 		
-		DeliveryModeData deliveryModeData = new DeliveryModeData();
+		final DeliveryModeData deliveryModeData = new DeliveryModeData();
 		deliveryModePopulator.populate(source.getDeliveryMode(), deliveryModeData);
 		target.setDeliveryMode(deliveryModeData);
 		
-		DeliveryModeData collectionModeData = new DeliveryModeData();
+		final DeliveryModeData collectionModeData = new DeliveryModeData();
 		deliveryModePopulator.populate(source.getCollectingMode(), collectionModeData);
 		target.setCollectingMode(collectionModeData);
 		
-		CustomerData customer = new CustomerData();
+		final CustomerData customer = new CustomerData();
 		customerPopulator.populate(source.getCustomer(), customer);
 		target.setCustomer(customer);
 		
@@ -50,19 +63,6 @@ public class OrderPopulator implements DefaultPopulator<OrderModel, OrderData> {
 		target.setSalesApplication(source.getSalesApplication().toString());
 		target.setTotalPrice(source.getTotalPrice().doubleValue());
 		target.setValide(source.isValide());
-	}
-	
-	private List<OrderEntryData> getOrderEntriesData(List<OrderEntryModel> orderEnties){
-		List<OrderEntryData> orderEntiesData = new ArrayList<OrderEntryData>();
-		
-		for(OrderEntryModel entry : orderEnties){
-			OrderEntryData orderEntryData = new OrderEntryData();
-			orderEntryPopulator.populate(entry, orderEntryData);
-			
-			orderEntiesData.add(orderEntryData);
-		}
-		
-		return orderEntiesData;
 	}
 
 }

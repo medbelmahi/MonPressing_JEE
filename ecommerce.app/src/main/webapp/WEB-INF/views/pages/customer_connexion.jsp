@@ -1,9 +1,12 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page session="false"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="include" tagdir="/WEB-INF/tags/include" %>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -13,10 +16,11 @@
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>Connexion | Mon Pressing - Pressing Industriel</title>	
+		<title>Inscription | Mon Pressing - Pressing Industriel</title>	
 
-		<include:include_connexion_style />
-
+		<include:include_inscription_style />
+		
+		
 	</head>
 	<body>
 
@@ -29,16 +33,17 @@
 				<div class="container">
 
 					<div class="row">
-						<div class="col-md-12">
-							<hr class="tall">
-						</div>
+<!-- 						<div class="col-md-12"> -->
+<!-- 							<hr class="tall"> -->
+<!-- 						</div> -->
 					</div>
 
+					
 					<div class="row">
 						<div class="col-md-12 ">
 							<div class="featured-boxes " >
 								<div class="row">
-									<div class="col-sm-6" >
+									<div class="col-sm-6 sign-in-form" >
 										<div class="featured-box featured-box-primary align-left mt-xlg">
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Espace Client</h4>
@@ -104,6 +109,7 @@
 							</div>
 						</div>
 					</div>
+					
 
 				</div>
 
@@ -116,7 +122,7 @@
 			</footer>
 		</div>
 
-		<include:include_connexion_style />
+		<include:include_inscription_javascript />
 
 	</body>
 </html>

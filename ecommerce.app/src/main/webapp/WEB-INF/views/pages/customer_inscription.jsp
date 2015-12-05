@@ -33,9 +33,9 @@
 				<div class="container">
 
 					<div class="row">
-						<div class="col-md-12">
-							<hr class="tall">
-						</div>
+<!-- 						<div class="col-md-12"> -->
+<!-- 							<hr class="tall"> -->
+<!-- 						</div> -->
 					</div>
 
 					<div class="row">
@@ -43,7 +43,7 @@
 							<div class="featured-boxes">
 								<div class="row">
 									
-									<div class="col-sm-6">
+									<div class="col-sm-6 sign-up-form">
 										<div class="featured-box featured-box-primary align-left mt-xlg">
 											<div class="box-content">
 												<h4 class="heading-primary text-uppercase mb-md">Inscription</h4>

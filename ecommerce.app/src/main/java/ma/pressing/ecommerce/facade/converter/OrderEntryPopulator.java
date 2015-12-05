@@ -13,16 +13,16 @@ import ma.pressing.ecommerce.model.OurServiceModel;
 @Component
 public class OrderEntryPopulator implements DefaultPopulator<OrderEntryModel, OrderEntryData> {
 
-	@Resource(name="ourServiceData")
+	@Resource(name = "ourServicePopulator")
 	DefaultPopulator<OurServiceModel, OurServiceData> ourServicePopulator;
 	
 	@Override
-	public void populate(OrderEntryModel source, OrderEntryData target) {
+	public void populate(final OrderEntryModel source, final OrderEntryData target) {
 		target.setPriceValue(source.getPriceValue().doubleValue());
 		target.setQuantity(source.getQuantity());
 		target.setTotalPrice(source.getTotalPrice().doubleValue());
 		
-		OurServiceData ourServiceData = new OurServiceData();
+		final OurServiceData ourServiceData = new OurServiceData();
 		ourServicePopulator.populate(source.getProductService(), ourServiceData);
 		target.setProductService(ourServiceData);
 	}

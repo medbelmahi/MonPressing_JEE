@@ -30,7 +30,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/theme-animate.css" />">
 
 <!-- Skin CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/css/skins/default-Copy.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/css/skins/default-copy.css" />">
 
 <!-- Theme Custom CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/custom.css" />">

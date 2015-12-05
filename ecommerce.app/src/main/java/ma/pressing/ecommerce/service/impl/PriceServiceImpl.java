@@ -3,6 +3,8 @@ package ma.pressing.ecommerce.service.impl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ma.pressing.ecommerce.model.CustomerModel;
 import ma.pressing.ecommerce.model.OurServiceModel;
@@ -11,6 +13,8 @@ import ma.pressing.ecommerce.model.enumeration.CustomerGroup;
 import ma.pressing.ecommerce.service.CustomerService;
 import ma.pressing.ecommerce.service.PriceService;
 
+@Service
+@Transactional
 public class PriceServiceImpl implements PriceService {
 
 	@Autowired

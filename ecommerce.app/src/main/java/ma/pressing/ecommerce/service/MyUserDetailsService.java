@@ -46,6 +46,7 @@ public class MyUserDetailsService implements UserDetailsService {
 		return new User(user.getEmail(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
 	}
 
+
 	public UserDao getUserDao() {
 		return userDao;
 	}
@@ -53,24 +54,11 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
 
-		// Programmatic transaction management
-		/*
-		return transactionTemplate.execute(new TransactionCallback<UserDetails>() {
-
-			public UserDetails doInTransaction(TransactionStatus status) {
-				com.mkyong.users.model.User user = userDao.findByUserName(username);
-				List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
-
-				return buildUserForAuthentication(user, authorities);
-			}
-
-		});*/
-		
 		final UserModel user = userDao.findOneByAttribut("email", email);
 		if (user != null) {
 			final List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
 			return buildUserForAuthentication(user, authorities);
-		}else {
+		} else {
 			return null;
 		}
 

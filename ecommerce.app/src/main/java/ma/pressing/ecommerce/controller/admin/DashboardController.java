@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/admin")
 public class DashboardController {
 
-	private static String PAGE_CONNEXION_ADMIN = "pages/admin/login";
+	private static String PAGE_CONNEXION_ADMIN = "pages/admin/page_login";
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView dashBoardLogin(@RequestParam(value = "error", required = false) final String error,

@@ -24,7 +24,7 @@
 				<option value="Linge4">Votre Linge 4</option>
 				<option value="Linge4">Votre Linge 5</option>
 		</select>-->
-		<form:select path="listLingeForm[indexValue].refProduct" class="form-control input-lg mb-md" data-msg-required="Faire un choix." required="true" >
+		<form:select path="listLingeForm[${indexValue}].refProduct" class="form-control input-lg mb-md" data-msg-required="Faire un choix." required="true" >
 <%-- 			<form:option value="NONE" label="--- choisir une lingne ---" /> --%>
 			<c:forEach items="${productsList}" var="product">
 				<c:choose>

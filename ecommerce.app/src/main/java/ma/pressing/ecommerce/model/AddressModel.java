@@ -12,6 +12,8 @@ import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
 @Table(name="ECOMMERCE_ADDRESSES")
 public class AddressModel extends AbstractModel{
 
+
+
 	private static final long serialVersionUID = 1115025747534825965L;
 	
 	@Column(name="STREET")

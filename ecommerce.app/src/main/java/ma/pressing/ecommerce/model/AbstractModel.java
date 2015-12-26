@@ -1,19 +1,14 @@
 package ma.pressing.ecommerce.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass	
 public class AbstractModel implements Serializable {
 	private static final long serialVersionUID = 2441143639225181443L;
 	
-	@Id
+	@Id//
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
 	protected Long id;

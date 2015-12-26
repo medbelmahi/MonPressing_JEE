@@ -316,12 +316,12 @@
 					<version>2.4</version>
 					<configuration>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
-						<scanIntervalSeconds>10</scanIntervalSeconds>
+						<!--<scanIntervalSeconds>10</scanIntervalSeconds>
 						<webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
 						<webAppConfig>
 							<contextPath>/Mon</contextPath>
 							<descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
-						</webAppConfig>
+						</webAppConfig>-->
 					</configuration>
 				</plugin>
 				<plugin>

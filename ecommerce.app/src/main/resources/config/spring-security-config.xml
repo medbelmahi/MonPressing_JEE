@@ -6,26 +6,53 @@
 	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
 	<!-- enable use-expressions -->
-	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/Mon_Compte**" access="hasRole('ROLE_B2B_CUSTOMER', 'ROLE_B2C_CUSTOMER')" />
+	<http pattern="/customer/**" auto-config="true" use-expressions="true" authentication-manager-ref="customerAuthMgr">
+		<!--<intercept-url pattern	="/admin/dashboard**" access="hasRole('ROLE_ADMIN')" />-->
+		<intercept-url pattern="/customer/Mon_Compte**" access="hasRole('ROLE_B2B_CUSTOMER', 'ROLE_B2C_CUSTOMER')" />
 
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />
 		<form-login always-use-default-target="true"
-		    login-page="/login" 
+		    login-page="/customer/login"
+			login-processing-url="/customer/j_spring_security_check"
 		    default-target-url="/welcome"
-			authentication-failure-url="/login?error" 
+			authentication-failure-url="/customer/login?error"
 			username-parameter="email"
 			password-parameter="password" />
-		<logout logout-success-url="/login?logout" />
+		<logout logout-success-url="/customer/login?logout" />
 		<!-- enable csrf protection -->
 		<csrf />
 	</http>
 
-	<authentication-manager>
+	<http pattern="/admin/**" auto-config="true" use-expressions="true" authentication-manager-ref="adminAuthMgr">
+		<intercept-url pattern="/admin/dashboard**" access="hasRole('ROLE_ADMIN')" />
+		<!--<intercept-url pattern="/Mon_Compte**" access="hasRole('ROLE_B2B_CUSTOMER', 'ROLE_B2C_CUSTOMER')" />-->
+
+		<!-- access denied page -->
+		<access-denied-handler error-page="/403" />
+		<form-login always-use-default-target="true"
+					login-page="/admin/login"
+					login-processing-url="/admin/j_spring_security_check"
+					default-target-url="/welcome"
+					authentication-failure-url="/admin/login?error"
+					username-parameter="email"
+					password-parameter="password" />
+		<logout logout-success-url="/admin/login?logout" />
+		<!-- enable csrf protection -->
+		<csrf />
+	</http>
+
+	<authentication-manager alias="customerAuthMgr">
 		<authentication-provider user-service-ref="myUserDetailsService" >
 			<password-encoder hash="bcrypt" />    
+		</authentication-provider>
+	</authentication-manager>
+
+	<authentication-manager id="adminAuthMgr">
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
+			</user-service>
 		</authentication-provider>
 	</authentication-manager>
 

@@ -1,14 +1,13 @@
 package ma.pressing.ecommerce.service.impl;
 
-import java.util.List;
-
+import ma.pressing.ecommerce.dao.UserDao;
+import ma.pressing.ecommerce.model.UserModel;
+import ma.pressing.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ma.pressing.ecommerce.dao.UserDao;
-import ma.pressing.ecommerce.model.UserModel;
-import ma.pressing.ecommerce.service.UserService;
+import java.util.List;
 
 @Service("userService")
 @Transactional

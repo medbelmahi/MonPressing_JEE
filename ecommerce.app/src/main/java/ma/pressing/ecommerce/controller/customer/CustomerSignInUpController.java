@@ -1,11 +1,10 @@
 package ma.pressing.ecommerce.controller.customer;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
+import ma.pressing.ecommerce.facade.DefaultCustomerFacade;
+import ma.pressing.ecommerce.facade.data.CustomerData;
+import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
+import ma.pressing.ecommerce.model.enumeration.CivilityType;
+import ma.pressing.ecommerce.web.form.data.CustomerForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.LockedException;
@@ -20,11 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import ma.pressing.ecommerce.facade.DefaultCustomerFacade;
-import ma.pressing.ecommerce.facade.data.CustomerData;
-import ma.pressing.ecommerce.model.enumeration.CityDeMaroc;
-import ma.pressing.ecommerce.model.enumeration.CivilityType;
-import ma.pressing.ecommerce.web.form.data.CustomerForm;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Controller
 public class CustomerSignInUpController {
@@ -89,7 +87,7 @@ public class CustomerSignInUpController {
 		return PAGE_INSCRIPTION;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/customer/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) final String error,
 			@RequestParam(value = "logout", required = false) final String logout, final HttpServletRequest request) {
 

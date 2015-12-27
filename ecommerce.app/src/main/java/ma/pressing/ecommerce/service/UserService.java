@@ -1,8 +1,8 @@
 package ma.pressing.ecommerce.service;
 
-import java.util.List;
-
 import ma.pressing.ecommerce.model.UserModel;
+
+import java.util.List;
 
 public interface UserService {
 	public UserModel save(UserModel userModel);

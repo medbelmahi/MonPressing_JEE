@@ -61,7 +61,7 @@
 														<strong><i class="fa fa-thumbs-o-up"></i> </strong> ${msg}
 													</div>
 												</c:if>
-												<form action="<c:url value='/login' />" id="frmSignIn" method="post">
+												<form action="<c:url value='/customer/j_spring_security_check' />" id="frmSignIn" method="post">
 													<div class="row">
 														<div class="form-group">
 															<div class="col-md-12">

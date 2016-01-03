@@ -1,13 +1,5 @@
 package ma.pressing.ecommerce.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import ma.pressing.ecommerce.model.CustomerModel;
 import ma.pressing.ecommerce.model.UserModel;
 import ma.pressing.ecommerce.model.UserRole;
@@ -15,6 +7,15 @@ import ma.pressing.ecommerce.service.CustomerService;
 import ma.pressing.ecommerce.service.UserRoleService;
 import ma.pressing.ecommerce.service.UserService;
 import ma.pressing.ecommerce.util.PasswordEncoderGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/newTest")
@@ -83,8 +84,45 @@ public class ControllerTest {
 	}
 
 
+	@RequestMapping(value = "/getJson/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Map getIt(@PathVariable Integer id) {
+
+		Map<String, Object> myMap = new HashMap<String, Object>();
+
+		List<String> list = new ArrayList<String>();
+		list.add(id + " : me0");
+		list.add(id + " : me1");
+		list.add(id + " : me2");
+
+		myMap.put("list", list);
+
+		Map<String, String>  myMap2 = new HashMap<String, String>();
+		myMap2.put("j", "L");
+		myMap2.put("o", "M");
+
+		myMap.put("map", myMap2);
+
+		return myMap;
+	}
+
+
+	@RequestMapping(value = "/getJson/person", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Person getIt(@RequestBody Person person) {
+
+		return person;
+	}
+
+	@RequestMapping(value = "/getJson/person/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Person getPerson(@PathVariable Integer id) {
+		Person person = new Person();
+		person.setAge(id);
+		person.setName("Here");
+		return person;
+	}
+
 
 	public UserService getUserService() {
+
 		return userService;
 	}
 

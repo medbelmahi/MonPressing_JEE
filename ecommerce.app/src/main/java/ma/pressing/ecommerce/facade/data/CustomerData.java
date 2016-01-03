@@ -3,7 +3,6 @@ package ma.pressing.ecommerce.facade.data;
 public class CustomerData extends UserData{
 	
 	private String civility;
-	private String completName;
 	private boolean b2b;
 	private AddressData addressData;
 	
@@ -20,12 +19,6 @@ public class CustomerData extends UserData{
 	}
 	public void setCivility(String civility) {
 		this.civility = civility;
-	}
-	public String getCompletName() {
-		return completName;
-	}
-	public void setCompletName(String completName) {
-		this.completName = completName;
 	}
 	public AddressData getAddressData() {
 		return addressData;

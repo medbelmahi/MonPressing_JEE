@@ -1,16 +1,15 @@
 package ma.pressing.ecommerce.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import ma.pressing.ecommerce.dao.CustomerDao;
 import ma.pressing.ecommerce.model.CustomerModel;
 import ma.pressing.ecommerce.service.CustomerService;
+import ma.pressing.ecommerce.service.MyUserDetailsService;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service("customerService")
 @Transactional
@@ -18,6 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
 	private CustomerDao userDao;
+
+	@Autowired
+	private MyUserDetailsService myUserDetailsService;
 	
 	@Override
 	public CustomerModel save(CustomerModel customerModel) {
@@ -60,11 +62,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public CustomerModel getCurrentCustomer() {
-		Object user = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (user != null && user instanceof User) {
-
-			String name =((User) user).getUsername(); // get logged in username
-
+		String name = myUserDetailsService.getCurrentUserName();
+		if (name != null && StringUtils.isNotEmpty(name)) {
 			CustomerModel customerModel = findCustomerByAttribut("email", name);
 
 			if (customerModel != null) {
@@ -74,6 +73,4 @@ public class CustomerServiceImpl implements CustomerService {
 		return null;
 	}
 	
-	
-
 }

@@ -50,7 +50,7 @@
 										
 										<li class="dropdown">
 											<a class="dropdown" href="deposer_linge.html">
-												Comment ça marche ?
+												Comment Ã§a marche ?
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="valider-votre-linge.html">Fonctionnement</a></li>
@@ -60,7 +60,7 @@
 										</li>
 										<li class="dropdown">
 											<a class="dropdown" href="<c:url value="/deposer_linge.html" />">
-												Déposez Votre Linge
+												DÃ©posez Votre Linge
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="valider-votre-linge.html">Verifiez et Confirmez</a></li>

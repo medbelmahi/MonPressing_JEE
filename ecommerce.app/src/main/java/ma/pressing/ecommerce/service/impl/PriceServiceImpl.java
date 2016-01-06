@@ -2,6 +2,8 @@ package ma.pressing.ecommerce.service.impl;
 
 import java.util.Date;
 
+import ma.pressing.ecommerce.model.ProductServiceModel;
+import ma.pressing.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,10 +23,10 @@ public class PriceServiceImpl implements PriceService {
 	CustomerService customerService;
 	
 	@Override
-	public PriceModel getValidatePrice(final OurServiceModel ourServiceModel) {
+	public PriceModel getValidatePrice(final ProductServiceModel productService) {
 		final CustomerModel custmerModel = customerService.getCurrentCustomer();
 		if (custmerModel != null) {
-			for (final PriceModel price : ourServiceModel.getPrices()) {
+			for (final PriceModel price : productService.getPrices()) {
 				if ((new Date()).before(price.getDateEndValidation())
 						&& (new Date()).after(price.getDateBeginValidation())
 						&& price.getCustomerGroup().equals(custmerModel.getCustomerGroup())) {
@@ -32,7 +34,7 @@ public class PriceServiceImpl implements PriceService {
 				}
 			}
 		} else {
-			for (final PriceModel price : ourServiceModel.getPrices()) {
+			for (final PriceModel price : productService.getPrices()) {
 				if ((new Date()).before(price.getDateEndValidation())
 						&& (new Date()).after(price.getDateBeginValidation())
 						&& price.getCustomerGroup().equals(CustomerGroup.B2C)) {

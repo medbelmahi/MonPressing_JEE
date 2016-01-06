@@ -1,13 +1,8 @@
 package ma.pressing.ecommerce.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="ECOMMERCE_PRODUCTS")
@@ -21,12 +16,14 @@ public class ProductModel extends AbstractModel{
 	private String productRef;
 	@Column(name="URL_IMAGE")
 	private String urlImage;
+	@Column(name = "DESCRIPTION")
+	private String description;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
 	private List<ImageMediaModel> images = new ArrayList<ImageMediaModel>(0);
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
-	private List<OurServiceModel> services = new ArrayList<OurServiceModel>(0);
+	private List<ProductServiceModel> services = new ArrayList<ProductServiceModel>(0);
 	
 	public String getProductRef() {
 		return productRef;
@@ -57,5 +54,20 @@ public class ProductModel extends AbstractModel{
 		this.urlImage = urlImage;
 	}
 
-	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<ProductServiceModel> getServices() {
+		return services;
+	}
+
+	public void setServices(List<ProductServiceModel> services) {
+		this.services = services;
+	}
 }

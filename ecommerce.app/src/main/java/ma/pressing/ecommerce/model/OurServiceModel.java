@@ -1,15 +1,8 @@
 package ma.pressing.ecommerce.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 @Table(name="ECOMMERCE_SERVICES")
@@ -19,17 +12,13 @@ public class OurServiceModel extends AbstractModel {
 	
 	@Column(name="CODE", unique=true)
 	private String code;
-	@Column(name="LABEL")
+	@Column(name="LABEL", unique=true)
 	private String label;
 	@Column(name="DESCRIPTION")
 	private String description;
 	
 	@OneToMany(fetch = FetchType.LAZY)
-	private List<PriceModel> prices = new ArrayList<PriceModel>();
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PRODUCT_REF", nullable = false)
-	private ProductModel product;
+	private List<ProductServiceModel> productServices = new ArrayList<ProductServiceModel>();
 
 	public String getLabel() {
 		return label;
@@ -47,20 +36,11 @@ public class OurServiceModel extends AbstractModel {
 		this.description = description;
 	}
 
-	public List<PriceModel> getPrices() {
-		return prices;
+	public String getCode() {
+		return code;
 	}
 
-	public void setPrices(List<PriceModel> prices) {
-		this.prices = prices;
+	public void setCode(String code) {
+		this.code = code;
 	}
-
-	public ProductModel getProduct() {
-		return product;
-	}
-
-	public void setProduct(ProductModel product) {
-		this.product = product;
-	}
-	
 }

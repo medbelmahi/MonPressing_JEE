@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Start: Sidebar -->
 <aside id="sidebar_left" class="nano nano-primary">
     <div class="nano-content">
@@ -44,7 +46,7 @@
         <!-- sidebar menu -->
         <ul class="nav sidebar-menu">
             <li class="sidebar-label pt20">Menu</li>
-            <li>
+            <%--<li>
                 <a href="pages_calendar.html">
                     <span class="fa fa-calendar"></span>
                     <span class="sidebar-title">Calendar</span>
@@ -55,14 +57,49 @@
                     <span class="glyphicons glyphicons-book_open"></span>
                     <span class="sidebar-title">Documentation</span>
                 </a>
-            </li>
-            <li class="active">
-                <a href="dashboard.html">
+            </li>--%>
+            <%--<li class="active">
+                <a href="<c:url value="/admin/dashboard/ecommerce/home" />">
                     <span class="glyphicons glyphicons-home"></span>
                     <span class="sidebar-title">Dashboard</span>
                 </a>
+            </li>--%>
+
+            <li>
+                <a class="accordion-toggle menu-open" href="#">
+                    <span class="glyphicons glyphicons-shopping_cart"></span>
+                    <span class="sidebar-title">Ecommerce</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="nav sub-nav">
+                    <li>
+                        <a href="<c:url value="/admin/dashboard/ecommerce/home" />">
+                            <span class="glyphicons glyphicons-shopping_cart"></span> Dashboard </a>
+                    </li>
+                    <li>
+                        <a href="<c:url value="/admin/dashboard/ecommerce/product/add" />">
+                            <span class="glyphicons glyphicons-tags"></span> Objets </a>
+                    </li>
+                    <li>
+                        <a href="ecommerce_products.html">
+                            <span class="glyphicons glyphicons-tags"></span> Services </a>
+                    </li>
+                    <li>
+                        <a href="ecommerce_orders.html">
+                            <span class="glyphicons glyphicons-coins"></span> Commandes </a>
+                    </li>
+                    <li>
+                        <a href="ecommerce_customers.html">
+                            <span class="glyphicons glyphicons-user_add"></span> Customers </a>
+                    </li>
+                    <%--<li>
+                        <a href="ecommerce_settings.html">
+                            <span class="glyphicons glyphicons-keys"></span> Store Settings </a>
+                    </li>--%>
+                </ul>
             </li>
-            <li class="sidebar-label pt15">Exclusive Tools</li>
+
+            <%--<li class="sidebar-label pt15">Exclusive Tools</li>
             <li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-fire"></span>
@@ -83,8 +120,8 @@
                             <span class="glyphicons glyphicons-sampler"></span> Admin Dock </a>
                     </li>
                 </ul>
-            </li>
-            <li>
+            </li>--%>
+            <%--<li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-cup"></span>
                     <span class="sidebar-title">Admin Forms</span>
@@ -112,38 +149,10 @@
                             <span class="glyphicons glyphicons-check"></span> Admin Validation </a>
                     </li>
                 </ul>
-            </li>
+            </li>--%>
 
-            <li class="sidebar-label pt20">Systems</li>
-            <li>
-                <a class="accordion-toggle" href="#">
-                    <span class="glyphicons glyphicons-shopping_cart"></span>
-                    <span class="sidebar-title">Ecommerce</span>
-                    <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                    <li>
-                        <a href="ecommerce_dashboard.html">
-                            <span class="glyphicons glyphicons-shopping_cart"></span> Dashboard <span class="label label-xs bg-primary">New</span></a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_products.html">
-                            <span class="glyphicons glyphicons-tags"></span> Products </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_orders.html">
-                            <span class="glyphicons glyphicons-coins"></span> Orders </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_customers.html">
-                            <span class="glyphicons glyphicons-user_add"></span> Customers </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_settings.html">
-                            <span class="glyphicons glyphicons-keys"></span> Store Settings </a>
-                    </li>
-                </ul>
-            </li>
+            <%--<li class="sidebar-label pt20">Systems</li>
+
             <li>
                 <a href="email_templates.html">
                     <span class="fa fa-envelope-o"></span>
@@ -152,11 +161,11 @@
                                 <span class="label label-xs bg-primary">New</span>
                             </span>
                 </a>
-            </li>
+            </li>--%>
 
             <!-- sidebar resources -->
-            <li class="sidebar-label pt20">Elements</li>
-            <li>
+            <%--<li class="sidebar-label pt20">Elements</li>--%>
+            <%--<li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-bell"></span>
                     <span class="sidebar-title">UI Elements</span>
@@ -204,8 +213,8 @@
                             <span class="glyphicons glyphicons-rabbit"></span> Icons </a>
                     </li>
                 </ul>
-            </li>
-            <li>
+            </li>--%>
+            <%--<li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-hdd"></span>
                     <span class="sidebar-title">Form Elements</span>
@@ -273,8 +282,8 @@
                             <span class="glyphicons glyphicons-show_big_thumbnails"></span> Grid </a>
                     </li>
                 </ul>
-            </li>
-            <li>
+            </li>--%>
+            <%--<li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-stopwatch"></span>
                     <span class="sidebar-title">Plugins</span>
@@ -339,8 +348,8 @@
                         </ul>
                     </li>
                 </ul>
-            </li>
-            <li>
+            </li>--%>
+            <%--<li>
                 <a class="accordion-toggle" href="#">
                     <span class="glyphicons glyphicons-more_items"></span>
                     <span class="sidebar-title">Pages</span>
@@ -432,11 +441,11 @@
                         </ul>
                     </li>
                 </ul>
-            </li>
+            </li>--%>
 
             <!-- sidebar bullets -->
-            <li class="sidebar-label pt20">Projects</li>
-            <li class="sidebar-proj">
+            <%--<li class="sidebar-label pt20">Projects</li>--%>
+<%--            <li class="sidebar-proj">
                 <a href="#projectOne">
                     <span class="fa fa-dot-circle-o text-primary"></span>
                     <span class="sidebar-title">Website Redesign</span>
@@ -459,10 +468,10 @@
                     <span class="fa fa-dot-circle-o text-warning"></span>
                     <span class="sidebar-title">SSD Upgrades</span>
                 </a>
-            </li>
+            </li>--%>
 
             <!-- sidebar progress bars -->
-            <li class="sidebar-label pt25 pb10">User Stats</li>
+            <%--<li class="sidebar-label pt25 pb10">User Stats</li>
             <li class="sidebar-stat mb10">
                 <a href="#projectOne" class="fs11">
                     <span class="fa fa-inbox text-info"></span>
@@ -474,8 +483,8 @@
                         </div>
                     </div>
                 </a>
-            </li>
-            <li class="sidebar-stat mb10">
+            </li>--%>
+            <%--<li class="sidebar-stat mb10">
                 <a href="#projectOne" class="fs11">
                     <span class="fa fa-dropbox text-warning"></span>
                     <span class="sidebar-title text-muted">Bandwidth</span>
@@ -486,7 +495,7 @@
                         </div>
                     </div>
                 </a>
-            </li>
+            </li>--%>
         </ul>
         <div class="sidebar-toggle-mini">
             <a href="#">

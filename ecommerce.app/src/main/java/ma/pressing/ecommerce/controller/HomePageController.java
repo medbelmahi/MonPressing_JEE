@@ -34,6 +34,7 @@ public class HomePageController {
 		model.addObject("title", "Spring Security + Hibernate Example");
 		model.addObject("message", "This is default page!");
 		LOG.info("welcome Page ");
+		System.out.println("me here  23l  2220");
 		model.setViewName(PAGE_INDEX);
 		return model;
 

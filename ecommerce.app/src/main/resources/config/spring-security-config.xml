@@ -56,4 +56,6 @@
 		</authentication-provider>
 	</authentication-manager>
 
+	<beans:bean id="springSecurityFilterChain" class="javax.servlet.Filter" />
+
 </beans:beans>

@@ -9,6 +9,7 @@ public class PriceData extends AbstractItemData {
 	private Date dateEndValidation;
 	private boolean b2bPrice;
 	private Integer scale;
+	private String customerGroup;
 	
 	
 	public Double getValue() {
@@ -41,6 +42,13 @@ public class PriceData extends AbstractItemData {
 	public void setScale(Integer scale) {
 		this.scale = scale;
 	}
-	
-	
+
+
+	public String getCustomerGroup() {
+		return customerGroup;
+	}
+
+	public void setCustomerGroup(String customerGroup) {
+		this.customerGroup = customerGroup;
+	}
 }

@@ -29,14 +29,15 @@ public class OurServicePopulator implements DefaultPopulator<OurServiceModel, Ou
 	public void populate(final OurServiceModel source, final OurServiceData target) {
 		target.setDescription(source.getDescription());
 		target.setLabel(source.getLabel());
-		
-		final PriceData price = new PriceData();
+		target.setCode(source.getCode());
+
+//		final PriceData price = new PriceData();
 //		pricePopulator.populate(priceService.getValidatePrice(source), price);
-		target.setPrice(price);
+//		target.setPrice(price);
 		
-		final ProductData product = new ProductData();
+//		final ProductData product = new ProductData();
 //		productPopulator.populate(source.getProduct(), product);
-		target.setProduct(product);
+//		target.setProduct(product);
 	}
 
 }

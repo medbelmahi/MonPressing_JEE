@@ -1,14 +1,11 @@
 package ma.pressing.ecommerce.facade.data;
 
 public class OurServiceData {
-	
+
+	private String code;
 	private String label;
 	private String description;
-	
-	private PriceData price;
-	private ProductData product;
-	
-	
+
 	public String getLabel() {
 		return label;
 	}
@@ -21,17 +18,12 @@ public class OurServiceData {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public PriceData getPrice() {
-		return price;
+
+	public String getCode() {
+		return code;
 	}
-	public void setPrice(PriceData price) {
-		this.price = price;
+
+	public void setCode(String code) {
+		this.code = code;
 	}
-	public ProductData getProduct() {
-		return product;
-	}
-	public void setProduct(ProductData product) {
-		this.product = product;
-	}
-	
 }

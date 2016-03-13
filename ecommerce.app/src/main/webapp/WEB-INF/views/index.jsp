@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="include" tagdir="/WEB-INF/tags/include" %>
+<%@ taglib prefix="include" tagdir="/WEB-INF/tags/include/front_office" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -356,7 +356,7 @@
 						<div class="col-md-12 center mb-xl">
 							<h2 class="mb-sm mt-md"><strong>Votre linge propre et repassé, livré à la maison !</strong> </h2>
 							<p class="lead mb-xl">MON PRESSING est à votre écoute du <strong>lundi</strong> au <strong>samedi</strong> de 9h à 20h<br>et <strong>dimanche</strong> de 09h à 12h</p>
-							<h4 class="heading-primary alternative-font mt-xl pt-xl">Mon Pressing <strong class="custom-underline">Vous simplifiez la Vie</strong></h4>
+							<h4 class="heading-primary alternative-font mt-xl pt-xl">Mon Pressing <strong class="custom-underline">Vous simplifie la Vie</strong></h4>
 						</div>
 					</div>
 				</div>

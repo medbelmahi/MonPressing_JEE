@@ -20,146 +20,7 @@
 <body class="ecommerce-page">
 
     <!-- Start: Theme Preview Pane -->
-    <div id="skin-toolbox" class="hidden">
-        <div class="panel">
-            <div class="panel-heading">
-                <span class="panel-icon"><i class="fa fa-gear text-primary"></i>
-                </span>
-                <span class="panel-title"> Theme Options</span>
-            </div>
-            <div class="panel-body pn">
-
-                <ul class="nav nav-list nav-list-sm pl15 pt10" role="tablist">
-                    <li class="active">
-                        <a href="#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
-                    </li>
-                    <li>
-                        <a href="#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
-                    </li>
-                    <li>
-                        <a href="#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content p20 ptn pb15">
-                    <div role="tabpanel" class="tab-pane active" id="toolbox-header">
-                        <form id="toolbox-header-skin">
-                            <h4 class="mv20">Header Skins</h4>
-
-                            <div class="skin-toolbox-swatches">
-                                <div class="checkbox-custom checkbox-disabled fill mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin8" checked value="bg-light">
-                                    <label for="headerSkin8">Light</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-primary mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin1" value="bg-primary">
-                                    <label for="headerSkin1">Primary</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-info mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin3" value="bg-info">
-                                    <label for="headerSkin3">Info</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-warning mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin4" value="bg-warning">
-                                    <label for="headerSkin4">Warning</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-danger mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin5" value="bg-danger">
-                                    <label for="headerSkin5">Danger</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-alert mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin6" value="bg-alert">
-                                    <label for="headerSkin6">Alert</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-system mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin7" value="bg-system">
-                                    <label for="headerSkin7">System</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-success mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin2" value="bg-success">
-                                    <label for="headerSkin2">Success</label>
-                                </div>
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="radio" name="headerSkin" id="headerSkin9" value="bg-dark">
-                                    <label for="headerSkin9">Dark</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
-                        <form id="toolbox-sidebar-skin">
-
-                            <h4 class="mv20">Sidebar Skins</h4>
-                            <div class="skin-toolbox-swatches">
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="radio" name="sidebarSkin" checked id="sidebarSkin3" value="">
-                                    <label for="sidebarSkin3">Dark</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-disabled mb5">
-                                    <input type="radio" name="sidebarSkin" id="sidebarSkin1" value="sidebar-light">
-                                    <label for="sidebarSkin1">Light</label>
-                                </div>
-                                <div class="checkbox-custom fill checkbox-light mb5">
-                                    <input type="radio" name="sidebarSkin" id="sidebarSkin2" value="sidebar-light light">
-                                    <label for="sidebarSkin2">Lighter</label>
-                                </div>
-
-                            </div>
-
-                        </form>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="toolbox-settings">
-                        <form id="toolbox-settings-misc">
-                            <h4 class="mv20 mtn">Layout Options</h4>
-                            <div class="form-group">
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="checkbox" checked="" id="header-option">
-                                    <label for="header-option">Fixed Header</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="checkbox" id="sidebar-option">
-                                    <label for="sidebar-option">Fixed Sidebar</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="checkbox" id="breadcrumb-option">
-                                    <label for="breadcrumb-option">Fixed Breadcrumbs</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="checkbox-custom fill mb5">
-                                    <input type="checkbox" id="breadcrumb-hidden">
-                                    <label for="breadcrumb-hidden">Hide Breadcrumbs</label>
-                                </div>
-                            </div>
-                            <h4 class="mv20">Layout Options</h4>
-                            <div class="form-group">
-                                <div class="radio-custom mb5">
-                                    <input type="radio" id="fullwidth-option" checked name="layout-option">
-                                    <label for="fullwidth-option">Fullwidth Layout</label>
-                                </div>
-                            </div>
-                            <div class="form-group mb20">
-                                <div class="radio-custom radio-disabled mb5">
-                                    <input type="radio" id="boxed-option" name="layout-option" disabled>
-                                    <label for="boxed-option">Boxed Layout <b class="text-muted">(Coming Soon)</b>
-                                    </label>
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-                <div class="form-group mn br-t p15">
-                    <a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
+        <include:include_admin_skin_toolbox />
     <!-- End: Theme Preview Pane -->
 
     <!-- Start: Main -->
@@ -233,6 +94,7 @@
                     <!-- End create new Product panel -->
 
                     <!-- recent orders table -->
+                    <%--
                     <div class="panel">
                         <div class="panel-menu p12 admin-form theme-primary">
                             <div class="row">
@@ -772,6 +634,11 @@
                             </table>
                         </div>
                     </div>
+                    --%>
+
+                    <div class="panel">
+                        <include:include_admin_object_table />
+                    </div>
 
                 </div>
                 <!-- end: .tray-center -->
@@ -1026,6 +893,298 @@
                     return 'label bg-primary light';
                 }
             });
+
+        });
+    </script>
+    <!-- END: PAGE SCRIPTS -->
+
+    <style>
+
+        /*demo styles*/
+        body {
+            min-height: 2000px;
+        }
+        .custom-nav-animation li {
+            display: none;
+        }
+        .custom-nav-animation li.animated {
+            display: block;
+        }
+
+        /* nav fixed settings */
+        ul.tray-nav.affix {
+            width: 319px;
+            top: 80px;
+        }
+    </style>
+
+    <!-- BEGIN: PAGE SCRIPTS -->
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="<c:url value="/resources/admin/vendor/plugins/datatables/media/js/jquery.dataTables.js" />" ></script>
+
+    <!-- Datatables Tabletools addon -->
+    <script type="text/javascript" src="<c:url value="/resources/admin/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js" />" ></script>
+
+    <!-- Datatables Editor addon - READ LICENSING NOT MIT  -->
+    <script type="text/javascript" src="<c:url value="/resources/admin/vendor/plugins/datatables/extensions/Editor/js/dataTables.editor.js" />" ></script>
+
+    <!-- Datatables Bootstrap Modifications  -->
+    <script type="text/javascript" src="<c:url value="/resources/admin/vendor/plugins/datatables/media/js/dataTables.bootstrap.js" />" ></script>
+    <script type="text/javascript" src="<c:url value="/resources/admin/vendor/plugins/datatables/extensions/Editor/js/editor.bootstrap.js" />" ></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            "use strict";
+
+            // Init Theme Core
+            Core.init();
+
+            // Init Theme Core
+            Demo.init();
+
+            // Init tray navigation smooth scroll
+            $('.tray-nav a').smoothScroll({
+                offset: -145
+            });
+
+            // Custom tray navigation animation
+            setTimeout(function() {
+                $('.custom-nav-animation li').each(function(i, e) {
+                    var This = $(this);
+                    var timer = setTimeout(function() {
+                        This.addClass('animated zoomIn');
+                    }, 100 * i);
+                });
+            }, 600);
+
+
+            // Init Datatables with Tabletools Addon
+            $('#datatable').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': false,
+                    'aTargets': [-1]
+                }],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 5,
+                "aLengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ],
+                "sDom": 't<"dt-panelfooter clearfix"ip>',
+                "oTableTools": {
+                    "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+
+            $('#datatable2').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': false,
+                    'aTargets': [-1]
+                }],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 5,
+                "aLengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ],
+                "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
+                "oTableTools": {
+                    "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+
+            $('#datatable3').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': false,
+                    'aTargets': [-1]
+                }],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 5,
+                "aLengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ],
+                "sDom": '<"dt-panelmenu clearfix"Tfr>t<"dt-panelfooter clearfix"ip>',
+                "oTableTools": {
+                    "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+
+            $('#datatable4').dataTable({
+                "aoColumnDefs": [{
+                    'bSortable': false,
+                    'aTargets': [-1]
+                }],
+                "oLanguage": {
+                    "oPaginate": {
+                        "sPrevious": "",
+                        "sNext": ""
+                    }
+                },
+                "iDisplayLength": 5,
+                "aLengthMenu": [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "All"]
+                ],
+                "sDom": 'T<"panel-menu dt-panelmenu"lfr><"clearfix">tip',
+
+                "oTableTools": {
+                    "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+                }
+            });
+
+            // Multi-Column Filtering
+            $('#datatable5 thead th').each(function() {
+                var title = $('#datatable5 tfoot th').eq($(this).index()).text();
+                $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
+            });
+
+            // DataTable
+            var table5 = $('#datatable5').DataTable({
+                "sDom": 't<"dt-panelfooter clearfix"ip>',
+                "ordering": false
+            });
+
+            // Apply the search
+            table5.columns().eq(0).each(function(colIdx) {
+                $('input', table5.column(colIdx).header()).on('keyup change', function() {
+                    table5
+                            .column(colIdx)
+                            .search(this.value)
+                            .draw();
+                });
+            });
+
+
+            // ABC FILTERING
+            var table6 = $('#datatable6').DataTable({
+                "sDom": 't<"dt-panelfooter clearfix"ip>',
+                "ordering": false
+            });
+
+            var alphabet = $('<div class="dt-abc-filter"/>').append('<span class="abc-label">Search: </span> ');
+            var columnData = table6.column(0).data();
+            var bins = bin(columnData);
+
+            $('<span class="active"/>')
+                    .data('letter', '')
+                    .data('match-count', columnData.length)
+                    .html('None')
+                    .appendTo(alphabet);
+
+            for (var i = 0; i < 26; i++) {
+                var letter = String.fromCharCode(65 + i);
+
+                $('<span/>')
+                        .data('letter', letter)
+                        .data('match-count', bins[letter] || 0)
+                        .addClass(!bins[letter] ? 'empty' : '')
+                        .html(letter)
+                        .appendTo(alphabet);
+            }
+
+            $('#datatable6').parents('.panel').find('.panel-menu').addClass('dark').html(alphabet);
+
+            alphabet.on('click', 'span', function() {
+                alphabet.find('.active').removeClass('active');
+                $(this).addClass('active');
+
+                _alphabetSearch = $(this).data('letter');
+                table6.draw();
+            });
+
+            var info = $('<div class="alphabetInfo"></div>')
+                    .appendTo(alphabet);
+
+            var _alphabetSearch = '';
+
+            $.fn.dataTable.ext.search.push(function(settings, searchData) {
+                if (!_alphabetSearch) {
+                    return true;
+                }
+                if (searchData[0].charAt(0) === _alphabetSearch) {
+                    return true;
+                }
+                return false;
+            });
+
+            function bin(data) {
+                var letter, bins = {};
+                for (var i = 0, ien = data.length; i < ien; i++) {
+                    letter = data[i].charAt(0).toUpperCase();
+
+                    if (bins[letter]) {
+                        bins[letter] ++;
+                    } else {
+                        bins[letter] = 1;
+                    }
+                }
+                return bins;
+            }
+
+            // ROW GROUPING
+            var table7 = $('#datatable7').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "sDom": 't<"dt-panelfooter clearfix"ip>',
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before(
+                                    '<tr class="row-label ' + group.replace(/ /g, '').toLowerCase() + '"><td colspan="5">' + group + '</td></tr>'
+                            );
+                            last = group;
+                        }
+                    });
+                }
+            });
+
+            // Order by the grouping
+            $('#datatable7 tbody').on('click', 'tr.row-label', function() {
+                var currentOrder = table7.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table7.order([2, 'desc']).draw();
+                } else {
+                    table7.order([2, 'asc']).draw();
+                }
+            });
+
+
+            // MISC DATATABLE HELPER FUNCTIONS
+
+            // Add Placeholder text to datatables filter bar
+            $('.dataTables_filter input').attr("placeholder", "Enter Terms...");
 
         });
     </script>

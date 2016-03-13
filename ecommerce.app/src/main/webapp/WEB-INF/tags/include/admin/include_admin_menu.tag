@@ -81,7 +81,7 @@
                             <span class="glyphicons glyphicons-tags"></span> Objets </a>
                     </li>
                     <li>
-                        <a href="ecommerce_products.html">
+                        <a href="<c:url value="/admin/dashboard/ecommerce/services/" />">
                             <span class="glyphicons glyphicons-tags"></span> Services </a>
                     </li>
                     <li>

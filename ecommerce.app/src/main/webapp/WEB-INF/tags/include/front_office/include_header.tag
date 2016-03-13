@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
 					<header id="header" class="header-narrow" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAtElement": "#header", "stickySetTop": "0", "stickyChangeLogo": false}'>
@@ -29,13 +30,13 @@
 														<ul class="nav nav-pills" id="mainNav">
 											
 										<li>
-												<a href="<c:url value="/" />">ACCUEIL</a>														
+												<a href="<c:url value="/" />"><spring:message code="fo.menu.header.home.text" /></a>
 											
 										</li>
 										
 										<li class="dropdown dropdown-mega">
 											<a  href="<c:url value="/Nos_Services" />" >
-												NOS SERVICES
+												<spring:message code="fo.menu.header.nos_service.text" />
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="<c:url value="/mp_ce_professionnels" />" >CE / PROFESSIONNELS</a></li>
@@ -44,13 +45,13 @@
 										</li>
 										<li class="dropdown">
 											<a class="#" href="<c:url value="/Nos_Tarifs" />">
-												 NOS TARIFS
+												<spring:message code="fo.menu.header.nos_tarifs.text" />
 											</a>
 										</li>
 										
 										<li class="dropdown">
 											<a class="dropdown" href="deposer_linge.html">
-												Comment ça marche ?
+												<spring:message code="fo.menu.header.comment_ca_marche.text" />
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="valider-votre-linge.html">Fonctionnement</a></li>
@@ -60,7 +61,7 @@
 										</li>
 										<li class="dropdown">
 											<a class="dropdown" href="<c:url value="/deposer_linge.html" />">
-												Déposez Votre Linge
+												<spring:message code="fo.menu.header.deposez_votre_linge.text" />
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="valider-votre-linge.html">Verifiez et Confirmez</a></li>
@@ -70,7 +71,7 @@
 										</li>
 										<li class="dropdown">
 										<!--  	<a class="dropdown-toggle" href="#"> -->
-												<li><a href="<c:url value="/contactez-nous.html" />">Contact</a></li>
+												<li><a href="<c:url value="/contactez-nous.html" />"><spring:message code="fo.menu.header.contact.text" /></a></li>
 										
 										<!-- End user account -->	
 										<c:if test="${not empty customer}">
